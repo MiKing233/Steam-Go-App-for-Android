@@ -1,0 +1,687 @@
+{
+  ["colors"]	= {
+      ["侧滑栏列表文字"]	= "#ff333333" ;
+      ["导航栏"]	= "#ff171a21" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["进度条"]	= "#00000000" ;
+      ["悬浮按钮"]	= "#ff33a7aa" ;
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["顶栏部件"]	= "#ffffffff" ;
+      ["侧滑栏背景"]	= "#ffffffff" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["顶栏"]	= "#ff171a21" ;
+      ["搜索栏提示文字"]	= "#80000000" ;
+      ["侧滑栏列表图标"]	= "#ff757575" ;
+      ["顶栏部件触摸"]	= "#22ffffff" ;
+      ["搜索栏背景"]	= "#ffffffff" ;
+      } ;
+  ["events"]	= {
+      ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["程序启动"]	= "--导航栏沉浸 Start\
+activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)\
+--导航栏沉浸 End\
+\
+\
+\
+\
+\
+packinfo=this.getPackageManager().getPackageInfo(this.getPackageName(),((32552732/2/2-8183)/10000-6-231)/9)\
+\
+version=tostring(packinfo.versionName)\
+\
+\
+\
+require\"import\"\
+\
+import \"android.app.*\"\
+\
+import \"android.os.*\"\
+\
+import \"android.widget.*\"\
+\
+import \"android.view.*\"\
+\
+import \"android.text.*\"\
+\
+\
+\
+layout={--页面背景\
+\
+  LinearLayout,\
+\
+  layout_width=\"fill\",\
+\
+  layout_height=\"fill\",\
+\
+  orientation=\"vertical\",\
+\
+  backgroundColor=\"#FFFFFF\",\
+\
+  {\
+\
+    RelativeLayout,\
+\
+    layout_width=\"fill\",\
+\
+    layout_height=\"150dp\",\
+\
+    layout_marginTop=\"35dp\",\
+\
+    {\
+\
+      ImageView,--图标\
+\
+      id=\"logo\",\
+\
+      layout_width=\"75dp\",\
+\
+      layout_height=\"75dp\",\
+\
+      layout_marginLeft=\"45dp\",\
+\
+      layout_centerVertical=true,\
+\
+      src=\"drawable/icon.png\",\
+\
+    },\
+\
+    {\
+\
+      TextView,--图标右侧文字\
+\
+      layout_toRightOf=\"logo\",\
+\
+      layout_marginLeft=\"25dp\",\
+\
+      layout_centerVertical=true,\
+\
+      text=Html.fromHtml(\"<b>Steam Go<br/>\\n<br/>氢量级第三方Steam App</b>\"),\
+\
+      textSize=\"15sp\",\
+\
+      textColor=\"#FF000000\",\
+\
+    }\
+\
+  },\
+\
+  {\
+\
+    RelativeLayout,\
+\
+    layout_width=\"fill\",\
+\
+    layout_height=\"fill\",\
+\
+    layout_marginTop=\"20dp\",\
+\
+    {\
+\
+      ListView,\
+\
+      id=\"list\",\
+\
+      layout_width=\"fill\",\
+\
+      layout_marginTop=\"20dp\",\
+\
+      layout_marginLeft=\"60dp\",\
+\
+      layout_marginRight=\"60dp\",\
+\
+      dividerHeight=\"0dp\",\
+\
+    },\
+\
+\
+\
+    {\
+\
+      LinearLayout,\
+\
+      layout_alignParentLeft=true,\
+\
+      layout_alignParentBottom=true,\
+\
+      layout_margin=\"20dp\",\
+\
+      orientation=\"horizontal\",\
+\
+      \
+      {\
+\
+        FrameLayout,\
+\
+        layout_width=\"10dp\",\
+\
+      },\
+\
+\
+\
+    },\
+\
+  },\
+\
+}\
+\
+\
+\
+activity.setContentView(loadlayout(layout))\
+\
+\
+\
+adpd={--栏目\
+\
+  {\
+\
+    img={\
+\
+      src=\"drawable/cube.png\",\
+\
+    },\
+\
+    title={\
+\
+      text=\"程序版本\",\
+\
+    },\
+\
+    content={\
+\
+      text=(version),\
+\
+    },\
+\
+  },\
+\
+    {\
+\
+    img={\
+\
+      src=\"drawable/account_circle.png\",\
+\
+    },\
+\
+    title={\
+\
+      text=\"开发者\",\
+\
+    },\
+\
+    content={\
+\
+      text=\"MiKing233\",\
+\
+    },\
+\
+  },\
+\
+  {\
+\
+    img={\
+\
+      src=\"drawable/cat.png\",\
+\
+    },\
+\
+    title={\
+\
+      text=\"关注我们\",\
+\
+    },\
+\
+    content={\
+\
+      text=\"了解我们的最新动态\",\
+\
+    },\
+\
+  },\
+\
+  {\
+\
+    img={\
+\
+      src=\"drawable/account_switch.png\",\
+\
+    },\
+\
+    title={\
+\
+      text=\"加入我们\",\
+\
+    },\
+\
+    content={\
+\
+      text=\"提供反馈并参与开发\",\
+\
+    },\
+\
+  },\
+\
+  {\
+\
+    img={\
+\
+      src=\"drawable/cash_100.png\",\
+\
+    },\
+\
+    title={\
+\
+      text=\"捐赠\",\
+\
+    },\
+\
+    content={\
+\
+      text=\"如果你喜欢请随意捐赠\",\
+\
+    },\
+\
+  },\
+\
+  {\
+\
+    img={\
+\
+      src=\"drawable/alert_circle.png\",\
+\
+    },\
+\
+    title={\
+\
+      text=\"关于更多\",\
+\
+    },\
+\
+    content={\
+\
+      text=\"开源代码 程序介绍 用户协议\",\
+\
+    },\
+\
+  },\
+\
+}\
+\
+\
+\
+items={\
+\
+  LinearLayout,\
+\
+  layout_width=\"fill\",\
+\
+  orientation=\"horizontal\",\
+\
+  gravity=\"center|left\",\
+\
+  {\
+\
+    ImageView,--栏目图标\
+\
+    id=\"img\",\
+\
+    layout_margin=\"15dp\",\
+\
+    layout_width=\"30dp\",\
+\
+    layout_height=\"30dp\",\
+\
+  },\
+\
+  {\
+\
+    LinearLayout,\
+\
+    layout_width=\"fill\",\
+\
+    layout_marginLeft=\"10dp\",\
+\
+    layout_marginRight=\"10dp\",\
+\
+    orientation=\"vertical\",\
+\
+    {\
+\
+      TextView,--栏目文字 上\
+\
+      id=\"title\",\
+\
+      textColor=\"#FF000000\",\
+\
+      textSize=\"15sp\",\
+\
+    },\
+\
+    {\
+\
+      TextView,--栏目文字 下\
+\
+      id=\"content\",\
+\
+      textColor=\"#FF000000\",\
+\
+      textSize=\"12sp\",\
+\
+    },\
+\
+  },\
+\
+}\
+\
+\
+\
+onclick={--项目点击事件\
+\
+\
+\
+\
+function()--版本点击事件 Start\
+  \
+EMUI5Dialog=require\"EMUI5Dialog\"    \
+exitConfirmDialog=EMUI5Dialog()\
+:setTitle(\"Steam Go版本\")  \
+:setMessage(version)\
+:setNegativeButton(\"在酷安查看\",function()\
+import \"android.content.Intent\"\
+import \"android.net.Uri\"\
+url=\"https://www.coolapk.com/apk/com.miking.steam\"\
+viewIntent = Intent(\"android.intent.action.VIEW\",Uri.parse(url))\
+activity.startActivity(viewIntent)\
+end,0xFF0f9d58)\
+:setNeutralButton(\"在GitHub查看\",function()\
+url=\"https://github.com/MiKing233/Steam-Go/releases\"\
+viewIntent = Intent(\"android.intent.action.VIEW\",Uri.parse(url))\
+activity.startActivity(viewIntent)\
+end,0xff1a73e8)\
+:setPositiveButton(\"取消\",function()\
+end,0xFFFF0000)\
+:show()\
+end,--版本点击事件 End\
+\
+\
+\
+\
+\
+\
+function()--开发者点击事件 Start\
+  \
+EMUI5Dialog=require\"EMUI5Dialog\"    \
+exitConfirmDialog=EMUI5Dialog()\
+--:setBackgroundColor(\"FFFFFFFF\")\
+:setTitle(\"联系开发者\")\
+\
+:setMessage(\"遇到问题了吗？\",\"#FF212121\")\
+:setNeutralButton(\"酷安\",function()\
+import \"android.content.Intent\"\
+import \"android.net.Uri\"\
+url=\"https://www.coolapk.com/u/1214878\"\
+viewIntent = Intent(\"android.intent.action.VIEW\",Uri.parse(url))\
+activity.startActivity(viewIntent)\
+end,0xFF0f9d58)\
+\
+:setNegativeButton(\"QQ\",function()\
+联系QQ(975680379)\
+end,0xff47bafe)\
+\
+:setPositiveButton(\"Steam\",function()\
+import \"android.content.Intent\"\
+import \"android.net.Uri\"\
+url=\"https://steamcommunity.com/id/975680379/\"\
+viewIntent = Intent(\"android.intent.action.VIEW\",Uri.parse(url))\
+activity.startActivity(viewIntent)\
+end,0xFF171a21)\
+\
+:show()\
+\
+end,--开发者点击事件 End,\
+\
+\
+\
+\
+\
+function()--关注我们点击事件 Start\
+\
+EMUI5Dialog=require\"EMUI5Dialog\"    \
+exitConfirmDialog=EMUI5Dialog()\
+--:setBackgroundColor(\"FFFFFFFF\")\
+:setTitle(\"关注我们\")\
+:setMessage(\"了解我们的最新动态\",\"#FF212121\")\
+:setPositiveButton(\"关注开发者的 Twitter\",function()\
+import \"android.content.Intent\"\
+import \"android.net.Uri\"\
+url=\"https://mobile.twitter.com/MiKing233\"\
+viewIntent = Intent(\"android.intent.action.VIEW\",Uri.parse(url))\
+activity.startActivity(viewIntent)\
+end,0xff1da1f2)\
+:setNegativeButton(\"关注开发者的 知乎\",function()\
+import \"android.content.Intent\"\
+import \"android.net.Uri\"\
+url=\"https://www.zhihu.com/people/dyking-96/activities\"\
+viewIntent = Intent(\"android.intent.action.VIEW\",Uri.parse(url))\
+activity.startActivity(viewIntent)\
+end,0xff0f88eb)\
+:setNeutralButton(\"关注开发者的 BiliBili\",function()\
+import \"android.content.Intent\"\
+import \"android.net.Uri\"\
+url=\"https://m.bilibili.com/space/22939458\"\
+viewIntent = Intent(\"android.intent.action.VIEW\",Uri.parse(url))\
+activity.startActivity(viewIntent)\
+end,0xfffb7299)\
+:show()\
+  \
+end,--关注我们点击事件 End\
+\
+  \
+  \
+  \
+\
+\
+function()--加入我们点击事件 Start\
+\
+EMUI5Dialog=require\"EMUI5Dialog\"\
+exitConfirmDialog=EMUI5Dialog()\
+--:setBackgroundColor(\"FFFFFFFF\")\
+:setTitle(\"加入我们\")\
+:setMessage(\"向我们提供反馈帮助我们变得更好并协作参与Steam Go的开发\",\"#FF212121\")\
+--:setView(loadlayout{Button,text=\"自定义布局\",onClick=function()exitConfirmDialog:dismiss()end})\
+:setNegativeButton(\"加入Steam Go反馈交流群\",function()\
+加QQ群(723659873)\
+end,0xff47bafe)\
+:show()\
+\
+end,--加入我们点击事件 End\
+\
+\
+\
+\
+\
+\
+function()--捐赠点击事件 Start\
+ \
+EMUI5Dialog=require\"EMUI5Dialog\"    \
+exitConfirmDialog=EMUI5Dialog()\
+--:setBackgroundColor(\"FFFFFFFF\")\
+:setTitle(\"支持开发者\")\
+:setMessage(\"如果你喜欢，请随意捐赠！\",\"#FF212121\")\
+--:setView(loadlayout{Button,text=\"自定义布局\",onClick=function()exitConfirmDialog:dismiss()end})\
+:setPositiveButton(\"支付宝\",function()\
+import \"android.content.Intent\"\
+import \"android.net.Uri\"\
+xpcall(function() \
+  local url=\"alipayqr://platformapi/startapp?saId=10000007&qrcode=HTTPS://QR.ALIPAY.COM/FKX000571TLV18SVKT1O89\"\
+  activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)));\
+end,\
+function()\
+  local url = \"HTTPS://QR.ALIPAY.COM/FKX000571TLV18SVKT1O89\";\
+  activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)));\
+end)\
+Toast.makeText(activity,\"正在跳转至支付宝，请耐心等待\" , Toast.LENGTH_SHORT )\
+.show()\
+end,0xff00aaee)\
+\
+\
+\
+:setNegativeButton(\"微信支付\",function()\
+  \
+AboutLayout={\
+  LinearLayout;\
+  orientation=\"vertical\";\
+  Focusable=true,\
+  FocusableInTouchMode=true,\
+  {\
+    ImageView;--影像视图\
+    src=\"qrcode.png\";\
+    layout_height=\"560\";--高度\
+    layout_marginTop=\"18\";--边顶\
+    layout_width=\"900\";--宽度\
+    layout_gravity=\"center_horizontal\";--重力\"中心_水平的\"\
+    id=\"qrcode\"\
+  };\
+\
+};\
+\
+\
+\
+AlertDialog.Builder(this)\
+.setTitle(\"微信支付\")\
+.setView(loadlayout(AboutLayout))\
+.setPositiveButton(\"如何使用？\",{onClick=function(v)Toast.makeText(activity,\"在二维码界面截图后打开微信，进入扫一扫，从相册选择二维码，选择刚才的截图\" , Toast.LENGTH_SHORT )\
+.show() end})\
+.show()\
+\
+\
+\
+\
+end,0xff00d10d)\
+:show()  \
+    \
+end,--捐赠点击事件 End\
+\
+\
+\
+\
+\
+function()--关于更多 Start\
+\
+\
+EMUI5Dialog=require\"EMUI5Dialog\"\
+exitConfirmDialog=EMUI5Dialog()\
+--:setBackgroundColor(\"FFFFFFFF\")\
+:setTitle(\"关于更多\")\
+:setMessage(\"更多有关Steam Go的信息\")\
+:setPositiveButton(\"用户协议\",function()\
+import \"android.content.Intent\"\
+import \"android.net.Uri\"\
+url=\"https://github.com/MiKing233/Steam-Go/blob/master/Steam%20Go%20User%20Agreement.txt\"\
+viewIntent = Intent(\"android.intent.action.VIEW\",Uri.parse(url))\
+activity.startActivity(viewIntent)\
+end)\
+\
+\
+:setNegativeButton(\"在GitHub上查看我们的开源代码\",function()\
+import \"android.content.Intent\"\
+import \"android.net.Uri\"\
+url=\"https://github.com/MiKing233/Steam-Go\"\
+viewIntent = Intent(\"android.intent.action.VIEW\",Uri.parse(url))\
+activity.startActivity(viewIntent)\
+end)\
+\
+\
+:setNeutralButton(\"程序介绍\",function()\
+import \"android.content.Intent\"\
+import \"android.net.Uri\"\
+url=\"https://github.com/MiKing233/Steam-Go/blob/master/README.md\"\
+viewIntent = Intent(\"android.intent.action.VIEW\",Uri.parse(url))\
+activity.startActivity(viewIntent)\
+\
+\
+\
+\
+end)\
+\
+\
+:show()\
+\
+\
+end,--关于更多 End\
+\
+}\
+\
+\
+\
+adapter=LuaAdapter(this,adpd,items)\
+\
+list.Adapter=adapter\
+\
+list.onItemClick=function(adp,view,pos,id)\
+\
+  if onclick[id] then\
+\
+    onclick[id]()\
+\
+  end\
+\
+end\
+" ;
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
+\
+--接收参数\
+浏览器对象，新标题=..." ;
+      } ;
+  ["web_control"]	= {
+      } ;
+  ["switch"]	= {
+      ["横屏"]	= false ;
+      ["显示状态栏"]	= true ;
+      ["启用启动图"]	= false ;
+      ["支持滑动页面"]	= false ;
+      } ;
+  ["sidebar"]	= {
+      ["启用"]	= false ;
+      ["启用顶部图片"]	= false ;
+      ["items"]	= {
+          } ;
+      } ;
+  ["toolbar"]	= {
+      ["输入栏模式"]	= false ;
+      ["搜索框提示"]	= "" ;
+      ["menus"]	= {
+          } ;
+      ["启用搜索功能"]	= false ;
+      ["icon_btns"]	= {
+          } ;
+      ["搜索URL"]	= "" ;
+      } ;
+  ["web"]	= {
+      ["浏览器用户标识"]	= "默认" ;
+      ["启用进度条"]	= false ;
+      ["网页沉浸"]	= false ;
+      ["启动网页"]	= "" ;
+      ["启用长按菜单"]	= false ;
+      ["支持打开外部应用"]	= false ;
+      } ;
+  ["fltBtn"]	= {
+      ["显示"]	= false ;
+      ["图标"]	= "" ;
+      ["点击事件"]	= "--悬浮按钮点击时执行的事件" ;
+      } ;
+  ["view_attribute"]	= {
+      ["搜索栏阴影强度"]	= "2dp" ;
+      ["侧滑栏宽度"]	= "240dp" ;
+      ["顶栏标题"]	= "Title" ;
+      ["顶栏高度"]	= "0dp" ;
+      ["顶栏阴影强度"]	= "2dp" ;
+      ["搜索栏圆角弧度"]	= "2dp" ;
+      } ;
+  } ;
