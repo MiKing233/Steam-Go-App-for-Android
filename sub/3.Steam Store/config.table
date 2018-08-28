@@ -1,0 +1,571 @@
+{
+  ["web"]	= {
+      ["惰性加载"]	= true ;
+      ["启用长按菜单"]	= false ;
+      ["浏览器用户标识"]	= "默认" ;
+      ["支持打开外部应用"]	= false ;
+      ["网页沉浸"]	= false ;
+      ["启用进度条"]	= true ;
+      } ;
+  ["sidebar"]	= {
+      ["启用"]	= true ;
+      ["启用顶部图片"]	= false ;
+      ["items"]	= {
+          [1]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/account/registerkey\")" ;
+              ["name"]	= "在Steam上激活产品" ;
+              ["icon"]	= "drawable/xml.png" ;
+              } ;
+          [2]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/digitalgiftcards/\")" ;
+              ["name"]	= "Steam礼品卡" ;
+              ["icon"]	= "drawable/ticket.png" ;
+              } ;
+          [3]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/updated/all/\")" ;
+              ["name"]	= "最近更新的内容" ;
+              ["icon"]	= "drawable/clock_fast.png" ;
+              } ;
+          [4]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tag/browse/?snr=1_4_4__12\")" ;
+              ["name"]	= "查看热门游戏标签" ;
+              ["icon"]	= "drawable/poll.png" ;
+              } ;
+          [5]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/zh-cn/休闲/\")" ;
+              ["name"]	= "休闲" ;
+              ["icon"]	= "drawable/duck.png" ;
+              } ;
+          [6]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/zh-cn/体育/\")" ;
+              ["name"]	= "体育" ;
+              ["icon"]	= "drawable/football_helmet.png" ;
+              } ;
+          [7]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/zh-cn/冒险/\")" ;
+              ["name"]	= "冒险" ;
+              ["icon"]	= "drawable/sword.png" ;
+              } ;
+          [8]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/zh-cn/动作/\")" ;
+              ["name"]	= "动作" ;
+              ["icon"]	= "drawable/run.png" ;
+              } ;
+          [9]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/zh-cn/大型多人在线/\")" ;
+              ["name"]	= "大型多人在线" ;
+              ["icon"]	= "drawable/xbox_controller.png" ;
+              } ;
+          [10]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/zh-cn/模拟/\")" ;
+              ["name"]	= "模拟" ;
+              ["icon"]	= "drawable/city.png" ;
+              } ;
+          [11]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/zh-cn/独立/\")" ;
+              ["name"]	= "独立" ;
+              ["icon"]	= "drawable/tree.png" ;
+              } ;
+          [12]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/zh-cn/竞速/\")" ;
+              ["name"]	= "竞速" ;
+              ["icon"]	= "drawable/car.png" ;
+              } ;
+          [13]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/zh-cn/策略/\")" ;
+              ["name"]	= "策略" ;
+              ["icon"]	= "drawable/castle.png" ;
+              } ;
+          [14]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/zh-cn/角色扮演/\")" ;
+              ["name"]	= "角色扮演" ;
+              ["icon"]	= "drawable/human.png" ;
+              } ;
+          [15]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/cn/Sexual+Content\")" ;
+              ["name"]	= "羞羞" ;
+              ["icon"]	= "drawable/fire.png" ;
+              } ;
+          [16]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/genre/Free%20to%20Play/\")" ;
+              ["name"]	= "免费游玩" ;
+              ["icon"]	= "drawable/sale.png" ;
+              } ;
+          [17]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/genre/Early%20Access/\")" ;
+              ["name"]	= "抢先体验" ;
+              ["icon"]	= "drawable/star_circle.png" ;
+              } ;
+          [18]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/freestuff/demos/\")" ;
+              ["name"]	= "试玩" ;
+              ["icon"]	= "drawable/package_variant_closed.png" ;
+              } ;
+          [19]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/vr/\")" ;
+              ["name"]	= "虚拟现实" ;
+              ["icon"]	= "drawable/hololens.png" ;
+              } ;
+          [20]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/controller/\")" ;
+              ["name"]	= "支持Steam控制器" ;
+              ["icon"]	= "drawable/controller_xbox.png" ;
+              } ;
+          [21]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/linux\")" ;
+              ["name"]	= "Linux 平台的游戏" ;
+              ["icon"]	= "drawable/linux.png" ;
+              } ;
+          [22]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/macos\")" ;
+              ["name"]	= "Mac OS X 平台的游戏" ;
+              ["icon"]	= "drawable/apple.png" ;
+              } ;
+          [23]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/software/\")" ;
+              ["name"]	= "Steam软件中心" ;
+              ["icon"]	= "drawable/apps.png" ;
+              } ;
+          [24]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/zh-cn/动画制作與建模/\")" ;
+              ["name"]	= "动画制作与建模" ;
+              ["icon"]	= "drawable/printer_3d.png" ;
+              } ;
+          [25]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/zh-cn/实用工具/\")" ;
+              ["name"]	= "实用工具" ;
+              ["icon"]	= "drawable/compass.png" ;
+              } ;
+          [26]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/zh-cn/教育/\")" ;
+              ["name"]	= "教育" ;
+              ["icon"]	= "drawable/baby.png" ;
+              } ;
+          [27]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/zh-cn/游戏开发/\")" ;
+              ["name"]	= "游戏开发" ;
+              ["icon"]	= "drawable/gamepad.png" ;
+              } ;
+          [28]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/zh-cn/照片编辑/\")" ;
+              ["name"]	= "照片编辑" ;
+              ["icon"]	= "drawable/camera_iris.png" ;
+              } ;
+          [29]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/zh-cn/网络出版/\")" ;
+              ["name"]	= "网络出版" ;
+              ["icon"]	= "drawable/book_multiple_variant.png" ;
+              } ;
+          [30]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/zh-cn/视频制作/\")" ;
+              ["name"]	= "视频制作" ;
+              ["icon"]	= "drawable/file_video.png" ;
+              } ;
+          [31]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/zh-cn/设计与插画/\")" ;
+              ["name"]	= "设计与插画" ;
+              ["icon"]	= "drawable/auto_fix.png" ;
+              } ;
+          [32]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/zh-cn/音频制作/\")" ;
+              ["name"]	= "音频制作" ;
+              ["icon"]	= "drawable/beats.png" ;
+              } ;
+          [33]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/videos/\")" ;
+              ["name"]	= "Steam视频中心" ;
+              ["icon"]	= "drawable/video.png" ;
+              } ;
+          [34]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/search/?sort_by=Released_DESC&tags=4700&category1=992\")" ;
+              ["name"]	= "电影" ;
+              ["icon"]	= "drawable/clapperboard.png" ;
+              } ;
+          [35]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/search/?sort_by=Released_DESC&tags=4242&category1=992\")" ;
+              ["name"]	= "剧集" ;
+              ["icon"]	= "drawable/filmstrip.png" ;
+              } ;
+          [36]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/search/?sort_by=Released_DESC&tags=15339&category1=992\")" ;
+              ["name"]	= "纪录片" ;
+              ["icon"]	= "drawable/format_object_tight.png" ;
+              } ;
+          [37]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/search/?sort_by=Released_DESC&tags=150626&category1=992\")" ;
+              ["name"]	= "游戏" ;
+              ["icon"]	= "drawable/gamepad.png" ;
+              } ;
+          [38]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/search/?sort_by=Released_DESC&tags=12057&category1=992\")" ;
+              ["name"]	= "教程" ;
+              ["icon"]	= "drawable/auto_fix.png" ;
+              } ;
+          [39]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/search/?sort_by=Released_DESC&tags=4234&category1=992\")" ;
+              ["name"]	= "短片" ;
+              ["icon"]	= "drawable/satellite.png" ;
+              } ;
+          [40]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/search/?sort_by=Released_DESC&tags=19&category1=992\")" ;
+              ["name"]	= "动作" ;
+              ["icon"]	= "drawable/run.png" ;
+              } ;
+          [41]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/search/?sort_by=Released_DESC&tags=4085&category1=992\")" ;
+              ["name"]	= "日本动画" ;
+              ["icon"]	= "drawable/jira.png" ;
+              } ;
+          [42]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/search/?sort_by=Released_DESC&tags=1719&category1=992\")" ;
+              ["name"]	= "欢乐" ;
+              ["icon"]	= "drawable/emoticon.png" ;
+              } ;
+          [43]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/search/?sort_by=Released_DESC&tags=5984&category1=992\")" ;
+              ["name"]	= "剧情" ;
+              ["icon"]	= "drawable/file_video.png" ;
+              } ;
+          [44]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/search/?sort_by=Released_DESC&tags=1667&category1=992\")" ;
+              ["name"]	= "恐怖" ;
+              ["icon"]	= "drawable/snapchat.png" ;
+              } ;
+          [45]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/search/?sort_by=Released_DESC&tags=3942&category1=992\")" ;
+              ["name"]	= "科幻" ;
+              ["icon"]	= "drawable/star_of_david.png" ;
+              } ;
+          [46]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/tags/en/360+Video\")" ;
+              ["name"]	= "360全景视频" ;
+              ["icon"]	= "drawable/hololens.png" ;
+              } ;
+          [47]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/app/353370/Steam_Controller\")" ;
+              ["name"]	= "购买Steam控制器" ;
+              ["icon"]	= "drawable/controller_xbox.png" ;
+              } ;
+          [48]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/app/353380/Steam_Link\")" ;
+              ["name"]	= "购买Steam流式盒" ;
+              ["icon"]	= "drawable/rss_box.png" ;
+              } ;
+          [49]	= {
+              ["onClick"]	= "加载网页(\"https://store.steampowered.com/app/358040/HTC_Vive\")" ;
+              ["name"]	= "购买HTC Vive" ;
+              ["icon"]	= "drawable/hololens.png" ;
+              } ;
+          } ;
+      } ;
+  ["tab_bar"]	= {
+      ["items"]	= {
+          [1]	= {
+              ["name"]	= "精选" ;
+              ["url"]	= "https://store.steampowered.com" ;
+              } ;
+          [2]	= {
+              ["name"]	= "探索" ;
+              ["url"]	= "https://store.steampowered.com/explore/" ;
+              } ;
+          [3]	= {
+              ["name"]	= "鉴赏家" ;
+              ["url"]	= "https://store.steampowered.com/curators/recommendedcurators/" ;
+              } ;
+          [4]	= {
+              ["name"]	= "新闻" ;
+              ["url"]	= "https://store.steampowered.com/news/" ;
+              } ;
+          [5]	= {
+              ["name"]	= "统计" ;
+              ["url"]	= "https://store.steampowered.com/stats/" ;
+              } ;
+          } ;
+      } ;
+  ["events"]	= {
+      ["网页即将加载"]	= "浏览器对象,网页链接=...\
+\
+if(网页链接:find\"https://store.steampowered.com/app\") then\
+  停止加载()\
+  进入子页面(\"通用界面\",{链接=网页链接})\
+end\
+\
+if(网页链接:find\"https://store.steampowered.com/search\")then\
+  停止加载()\
+  进入子页面(\"通用界面\",{链接=网页链接})\
+end\
+\
+if(网页链接:find\"https://store.steampowered.com/account/registerkey\")then\
+  停止加载()\
+  进入子页面(\"通用界面\",{链接=网页链接})\
+end\
+\
+if(网页链接:find\"https://store.steampowered.com/account/wishlist\")then\
+  停止加载()\
+  进入子页面(\"通用界面\",{链接=网页链接})\
+end\
+\
+if(网页链接:find\"https://store.steampowered.com/account/cart\")then\
+  停止加载()\
+  进入子页面(\"通用界面\",{链接=网页链接})\
+end" ;
+      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
+\
+--接收参数\
+浏览器对象,新标题=..." ;
+      ["程序启动"]	= "--远程安全漏洞补丁 Start\
+import 'android.webkit.WebView'\
+webView.addJavascriptInterface({},'JsInterface')\
+--远程安全漏洞补丁 End\
+\
+\
+\
+--侧滑栏圆角 Start\
+import \"android.graphics.drawable.GradientDrawable\"\
+ID = sidebar\
+drawable = GradientDrawable() \
+drawable.setShape(GradientDrawable.RECTANGLE) \
+drawable.setColor(0xFF171A21)\
+drawable.setCornerRadii({50,50,50,50,50,50,50,50});\
+ID.setBackgroundDrawable(drawable)\
+linearParams = ID.getLayoutParams()\
+linearParams.width =650\
+linearParams.height =1400\
+ID.setLayoutParams(linearParams)\
+flt=ID.getLayoutParams( )\
+flt.setMargins(0, 300, 0, 0)\
+ID.setLayoutParams(flt)\
+\
+--滑动动画\
+local lay=drawerLayout.getChildAt(1)\
+--监听侧滑滑动事件\
+local pio=this.getWidth()*0.1\
+drawerLayout.setDrawerListener(DrawerLayout.DrawerListener{\
+  onDrawerSlide=function(v,i)\
+    lay.setScaleX(1-i/13.5).setScaleY(1-i/12.5)--页面缩放\
+    lay.setTranslationX((({0,0,1,0,-1})[v.LayoutParams.gravity])*(i*0.5*pio))--页面位移\
+    --sidebar.setScaleX(i).setScaleY(i)--侧滑栏缩放\
+  end})\
+--侧滑栏圆角 End\
+\
+\
+--导航栏沉浸 Start\
+activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)\
+--导航栏沉浸 End\
+\
+\
+\
+--可移动悬浮按钮Start\
+--获得屏幕宽高\
+local w=this.getWidth()\
+local h=this.getHeight()\
+\
+--获取状态栏高度\
+local function getStatusBarHeight(JDPUK)\
+  if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..\"32\" then error()end\
+  local resid=activity.getResources().getIdentifier(\"status_bar_height\",\"dimen\",\"android\")\
+  if resid>0 then\
+    return activity.getResources().getDimensionPixelSize(resid)\
+  end\
+end\
+jdpuk=32552732\
+\
+--设置悬浮按钮位置\
+local function setFloatButtonPosition(X,Y,J,D,P,U,K)\
+  if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..\"32\" then error()end\
+  fltBtn.LayoutParams=fltBtn.LayoutParams.setMargins(0,0,w-X-fltBtn.getMeasuredWidth()/2,h-Y-fltBtn.getMeasuredHeight()/2)-- 3 2 5 5 2 7 3 2\
+  --保存悬浮按钮位置\
+  this.setSharedData(\"悬浮按钮横坐标\",X)\
+  this.setSharedData(\"悬浮按钮纵坐标\",Y)\
+end\
+\
+--初始化按下起始位置\
+local sx\
+local sy\
+\
+--设置移动条件(最小移动范围)\
+local mr=50\
+--初始化是否移动\
+local cm=false\
+\
+--设置自动校准范围\
+local tr=50\
+--设置自动校准坐标\
+local tp={\
+  {0,nil},--左贴边\
+  {nil,0},--上贴边\
+  {w,nil},--右贴边\
+  {nil,h},--下贴边\
+}\
+task(200,function(JDPUK)--一些需要用到悬浮按钮参数的坐标，得延时等悬浮按钮准备好\
+  if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..\"32\" then error()end\
+  table.insert(tp,{w/2+1,h-fltBtn.getMeasuredHeight()})--约中下位置\
+  --table.insert(tp,{w-fltBtn.getMeasuredWidth()/2,h-fltBtn.getMeasuredHeight()/2})\
+end)\
+\
+--监听悬浮按钮被按下事件\
+task(200,function(JDPUK)--延时等待悬浮按钮准备好\
+  if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..\"32\" then error()end\
+  fltBtn.getChildAt(0).onTouch=function(view,event,JDPUK)--悬浮按钮本身无法监听点击事件，找子控件监听\
+    if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..\"32\" then error()end\
+\
+    --得到手指当前位置\
+    local x=event.getRawX()\
+    local y=event.getRawY()\
+\
+    if event.getAction()==MotionEvent.ACTION_DOWN then--如果是按下事件，则保存按下的位置\
+      if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..\"32\" then error()end\
+      --保存按下位置\
+      sx=x\
+      sy=y\
+      return false\
+    elseif event.getAction()==MotionEvent.ACTION_MOVE then--如果是移动事件，则移动悬浮按钮\
+      if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..\"32\" then error()end\
+\
+      if cm then\
+\
+        --fltBtn.LayoutParams=fltBtn.LayoutParams.setMargins(0,0,this.getWidth()-event.getRawX()-fltBtn.getMeasuredWidth()/2,this.getHeight()-event.getRawY()-fltBtn.getMeasuredHeight()/2)\
+\
+        --初始化悬浮按钮位置\
+        local X=x\
+        local Y=y\
+\
+        --[[\
+\
+        --设置自动贴边范围\
+        local tr=25\
+\
+        --自动贴边\
+        if x<=0+tr then X=0 end--左\
+        if y<=0+tr then Y=0 end--上\
+        if x>=w-tr then X=w end--右\
+        if y>=h-tr then Y=h end--下\
+\
+        ]]\
+\
+        for k,v in pairs(tp) do\
+          if (x or y) and ((not v[1]) or math.abs(x-v[1])<=tr) and ((not v[2]) or math.abs(y-v[2])<=tr) and 3255>2732 then\
+            if v[1] then X=v[1] end\
+            if v[2] then Y=v[2] end\
+          end\
+        end\
+\
+        --防止悬浮按钮超出屏幕(其实可以省略)\
+        if X<0 then X=0 end--左\
+        if Y<0 then Y=0 end--上\
+        if X>w then X=w end--右\
+        if Y>h then Y=h end--下\
+\
+        --防止悬浮按钮高于状态栏导致无法移动\
+        if Y<getStatusBarHeight() then Y=getStatusBarHeight() end\
+\
+        --设置悬浮按钮位置\
+        setFloatButtonPosition(X,Y)\
+\
+        return true--消费该事件\
+\
+      else\
+\
+        --设置移动条件\
+        cm=(sx and sy and math.abs((x+y)-(sx+sy))>=mr and jdpuk==tonumber(\"3255\"..\"2732\"))--32552732\
+\
+        return false\
+      end\
+    elseif event.getAction()==MotionEvent.ACTION_UP then--如果是松开事件，则...嗯处理一些东西，自己看吧\
+      if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..tostring(32) then error()end\
+\
+      --重置变量前先把需要的变量保存为局部变量\
+      local tmp=cm\
+\
+      --重置变量\
+      sx=nil\
+      sy=nil\
+      cm=false\
+\
+      --如果本次按下符合移动条件，则消费事件\
+      if tmp then\
+        return true\
+      else\
+        return false\
+      end\
+\
+    end\
+    return false\
+  end\
+end)\
+if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..\"32\" then error()end\
+--可移动悬浮按钮 End" ;
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      } ;
+  ["colors"]	= {
+      ["侧滑栏列表文字"]	= "#ffffffff" ;
+      ["悬浮按钮"]	= "#ff171a21" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["标签栏滑动条"]	= "#fff74843" ;
+      ["搜索栏提示文字"]	= "#ffffffff" ;
+      ["顶栏部件触摸"]	= "#33ffffff" ;
+      ["顶栏"]	= "#ff171a21" ;
+      ["搜索栏背景"]	= "#ff171a21" ;
+      ["侧滑栏背景"]	= "#ff171a21" ;
+      ["标签栏文本"]	= "#ffffffff" ;
+      ["状态栏"]	= "#ffffffff" ;
+      ["进度条"]	= "#ff1a73e8" ;
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["导航栏"]	= "#ff171a21" ;
+      ["顶栏部件"]	= "#ffffffff" ;
+      ["侧滑栏列表图标"]	= "#ffffffff" ;
+      ["标签栏项目触摸"]	= "#33000000" ;
+      } ;
+  ["fltBtn"]	= {
+      ["图标"]	= "" ;
+      ["显示"]	= true ;
+      ["点击事件"]	= "返回网页顶部()--悬浮按钮点击时执行的事件" ;
+      } ;
+  ["启用"]	= true ;
+  ["toolbar"]	= {
+      ["icon_btns"]	= {
+          [1]	= {
+              ["onClick"]	= "退出页面()" ;
+              ["icon"]	= "chevron_left" ;
+              } ;
+          } ;
+      ["搜索URL"]	= "https://store.steampowered.com/search/?term=%s" ;
+      ["menus"]	= {
+          } ;
+      ["输入栏模式"]	= false ;
+      ["启用搜索功能"]	= true ;
+      ["搜索框提示"]	= "搜索商店" ;
+      } ;
+  ["switch"]	= {
+      ["显示状态栏"]	= true ;
+      ["支持滑动页面"]	= true ;
+      ["启用启动图"]	= false ;
+      ["横屏"]	= false ;
+      } ;
+  ["web_control"]	= {
+      [2]	= {
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
+          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
+          ["url"]	= "steamcommunity.com" ;
+          } ;
+      [1]	= {
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
+          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
+          ["url"]	= "store.steampowered.com" ;
+          } ;
+      } ;
+  ["view_attribute"]	= {
+      ["侧滑栏宽度"]	= "250dp" ;
+      ["标签栏高度"]	= "48dp" ;
+      ["顶栏标题"]	= "商店" ;
+      ["搜索栏阴影强度"]	= "2dp" ;
+      ["标签栏滑动条高度"]	= "3dp" ;
+      ["顶栏阴影强度"]	= "2dp" ;
+      ["搜索栏圆角弧度"]	= "2dp" ;
+      ["顶栏高度"]	= "56dp" ;
+      } ;
+  } ;
