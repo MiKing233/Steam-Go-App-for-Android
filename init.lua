@@ -1,5 +1,5 @@
-appver="2.1.2 Beta"
-appname="Steam Go"
+appver="2.1.3 Alpha"
+template="tool"
 user_permission={
   [1]	= "ACCESS_COARSE_LOCATION" ;
   [2]	= "ACCESS_FINE_LOCATION" ;
@@ -8,6 +8,6 @@ user_permission={
   [5]	= "INTERNET" ;
   [6]	= "WRITE_EXTERNAL_STORAGE" ;
   } ;
+appname="Steam Go"
+appcode="213"
 packagename="com.miking.steam"
-appcode="212"
-template="tool"
