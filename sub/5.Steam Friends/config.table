@@ -1,42 +1,73 @@
 {
   ["colors"]	= {
-      ["侧滑栏列表图标"]	= "#ff757575" ;
-      ["搜索栏背景"]	= "#ff373534" ;
-      ["顶栏"]	= "#ff000000" ;
-      ["搜索栏提示文字"]	= "#ffffffff" ;
-      ["进度条"]	= "#00000000" ;
-      ["侧滑栏列表文字"]	= "#ff333333" ;
       ["顶栏部件触摸"]	= "#22ffffff" ;
-      ["搜索栏部件"]	= "#ff888888" ;
-      ["搜索栏部件触摸"]	= "#44000000" ;
-      ["导航栏"]	= "#ff171a21" ;
-      ["侧滑栏背景"]	= "#ffffffff" ;
-      ["顶栏部件"]	= "#ff000000" ;
-      ["悬浮按钮图标"]	= "#ffffffff" ;
       ["悬浮按钮"]	= "#ff434953" ;
-      } ;
-  ["fltBtn"]	= {
-      ["点击事件"]	= "刷新网页()--悬浮按钮点击时执行的事件" ;
-      ["图标"]	= "" ;
-      ["显示"]	= true ;
+      ["顶栏"]	= "#ff000000" ;
+      ["顶栏部件"]	= "#ff000000" ;
+      ["导航栏"]	= "#ff171a21" ;
+      ["进度条"]	= "#00000000" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["侧滑栏列表图标"]	= "#ff757575" ;
+      ["侧滑栏背景"]	= "#ffffffff" ;
+      ["侧滑栏列表文字"]	= "#ff333333" ;
+      ["搜索栏背景"]	= "#ff373534" ;
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["搜索栏提示文字"]	= "#ffffffff" ;
       } ;
   ["web"]	= {
-      ["customUa"]	= "Steam" ;
-      ["支持打开外部应用"]	= false ;
-      ["启用进度条"]	= false ;
-      ["启动网页"]	= "https://steamcommunity.com/chat/" ;
+      ["网页沉浸"]	= false ;
       ["浏览器用户标识"]	= "默认" ;
       ["启用长按菜单"]	= false ;
-      ["网页沉浸"]	= false ;
+      ["启用进度条"]	= false ;
+      ["支持打开外部应用"]	= false ;
+      ["customUa"]	= "Steam" ;
+      ["启动网页"]	= "https://steamcommunity.com/chat/" ;
       } ;
-  ["web_control"]	= {
-      [1]	= {
-          ["url"]	= "steamcommunity.com" ;
-          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
-          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
+  ["view_attribute"]	= {
+      ["侧滑栏宽度"]	= "240dp" ;
+      ["顶栏高度"]	= "0dp" ;
+      ["搜索栏圆角弧度"]	= "2dp" ;
+      ["顶栏标题"]	= "好友" ;
+      ["顶栏阴影强度"]	= "2dp" ;
+      ["搜索栏阴影强度"]	= "2dp" ;
+      } ;
+  ["sidebar"]	= {
+      ["启用顶部图片"]	= false ;
+      ["items"]	= {
           } ;
+      ["启用"]	= false ;
       } ;
   ["events"]	= {
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=...\
+\
+if(网页链接:find\"https://store.steampowered.com/app\") then\
+  停止加载()\
+  进入子页面(\"通用界面\",{链接=网页链接})\
+end\
+if(网页链接:find\"https://store.steampowered.com/search\")then\
+  停止加载()\
+  进入子页面(\"通用界面\",{链接=网页链接})\
+end\
+if(网页链接:find\"https://store.steampowered.com/account/registerkey\")then\
+  停止加载()\
+  进入子页面(\"通用界面\",{链接=网页链接})\
+end\
+if(网页链接:find\"https://store.steampowered.com/account/wishlist\")then\
+  停止加载()\
+  进入子页面(\"通用界面\",{链接=网页链接})\
+end\
+if(网页链接:find\"https://store.steampowered.com/account/cart\")then\
+  停止加载()\
+  进入子页面(\"通用界面\",{链接=网页链接})\
+end" ;
       ["程序启动"]	= "--远程安全漏洞补丁 Start\
 import 'android.webkit.WebView'\
 webView.addJavascriptInterface({},'JsInterface')\
@@ -197,64 +228,33 @@ if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\
 \
 --接收参数\
 浏览器对象，新标题=..." ;
-      ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
-\
---接收参数\
-浏览器对象,网页链接=...\
-\
-if(网页链接:find\"https://store.steampowered.com/app\") then\
-  停止加载()\
-  进入子页面(\"通用界面\",{链接=网页链接})\
-end\
-if(网页链接:find\"https://store.steampowered.com/search\")then\
-  停止加载()\
-  进入子页面(\"通用界面\",{链接=网页链接})\
-end\
-if(网页链接:find\"https://store.steampowered.com/account/registerkey\")then\
-  停止加载()\
-  进入子页面(\"通用界面\",{链接=网页链接})\
-end\
-if(网页链接:find\"https://store.steampowered.com/account/wishlist\")then\
-  停止加载()\
-  进入子页面(\"通用界面\",{链接=网页链接})\
-end\
-if(网页链接:find\"https://store.steampowered.com/account/cart\")then\
-  停止加载()\
-  进入子页面(\"通用界面\",{链接=网页链接})\
-end" ;
-      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
-\
---接收参数\
-浏览器对象,网页链接=..." ;
-      } ;
-  ["switch"]	= {
-      ["启用启动图"]	= false ;
-      ["横屏"]	= false ;
-      ["显示状态栏"]	= true ;
-      ["支持滑动页面"]	= true ;
-      } ;
-  ["sidebar"]	= {
-      ["启用顶部图片"]	= false ;
-      ["items"]	= {
-          } ;
-      ["启用"]	= false ;
-      } ;
-  ["view_attribute"]	= {
-      ["侧滑栏宽度"]	= "240dp" ;
-      ["搜索栏圆角弧度"]	= "2dp" ;
-      ["顶栏标题"]	= "好友" ;
-      ["顶栏阴影强度"]	= "2dp" ;
-      ["搜索栏阴影强度"]	= "2dp" ;
-      ["顶栏高度"]	= "0dp" ;
       } ;
   ["toolbar"]	= {
-      ["搜索框提示"]	= "" ;
       ["menus"]	= {
           } ;
-      ["搜索URL"]	= "" ;
-      ["启用搜索功能"]	= false ;
       ["icon_btns"]	= {
           } ;
+      ["启用搜索功能"]	= false ;
+      ["搜索框提示"]	= "" ;
+      ["搜索URL"]	= "" ;
       ["输入栏模式"]	= false ;
+      } ;
+  ["web_control"]	= {
+      [1]	= {
+          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
+          ["url"]	= "steamcommunity.com" ;
+          } ;
+      } ;
+  ["fltBtn"]	= {
+      ["点击事件"]	= "刷新网页()--悬浮按钮点击时执行的事件" ;
+      ["图标"]	= "" ;
+      ["显示"]	= true ;
+      } ;
+  ["switch"]	= {
+      ["横屏"]	= false ;
+      ["支持滑动页面"]	= true ;
+      ["启用启动图"]	= false ;
+      ["显示状态栏"]	= true ;
       } ;
   } ;
