@@ -1,96 +1,36 @@
 {
-  ["switch"]	= {
-      ["启用启动图"]	= false ;
-      ["显示状态栏"]	= true ;
-      ["支持滑动页面"]	= true ;
-      ["横屏"]	= false ;
-      } ;
-  ["sidebar"]	= {
-      ["items"]	= {
-          } ;
-      ["启用"]	= false ;
-      ["启用顶部图片"]	= false ;
-      } ;
-  ["colors"]	= {
-      ["进度条"]	= "#00000000" ;
-      ["悬浮按钮图标"]	= "#ffffffff" ;
-      ["搜索栏提示文字"]	= "#80000000" ;
-      ["顶栏部件"]	= "#ffffffff" ;
-      ["侧滑栏背景"]	= "#ffffffff" ;
-      ["顶栏部件触摸"]	= "#22ffffff" ;
-      ["侧滑栏列表图标"]	= "#ff757575" ;
-      ["搜索栏背景"]	= "#ffffffff" ;
-      ["导航栏"]	= "#ff171a21" ;
-      ["侧滑栏列表文字"]	= "#ff333333" ;
-      ["悬浮按钮"]	= "#ff171a21" ;
-      ["搜索栏部件"]	= "#ff888888" ;
-      ["顶栏"]	= "#ff171a21" ;
-      ["搜索栏部件触摸"]	= "#44000000" ;
-      } ;
-  ["view_attribute"]	= {
-      ["侧滑栏宽度"]	= "240dp" ;
-      ["搜索栏阴影强度"]	= "2dp" ;
-      ["搜索栏圆角弧度"]	= "2dp" ;
-      ["顶栏标题"]	= "加载中..." ;
-      ["顶栏高度"]	= "56dp" ;
-      ["顶栏阴影强度"]	= "2dp" ;
+  ["web"]	= {
+      ["支持打开外部应用"]	= false ;
+      ["网页沉浸"]	= false ;
+      ["启动网页"]	= "" ;
+      ["启用进度条"]	= false ;
+      ["启用长按菜单"]	= false ;
+      ["浏览器用户标识"]	= "默认" ;
       } ;
   ["fltBtn"]	= {
       ["显示"]	= true ;
-      ["点击事件"]	= "刷新网页()" ;
       ["图标"]	= "" ;
-      } ;
-  ["web"]	= {
-      ["支持打开外部应用"]	= false ;
-      ["浏览器用户标识"]	= "默认" ;
-      ["启用进度条"]	= false ;
-      ["网页沉浸"]	= false ;
-      ["启动网页"]	= "" ;
-      ["启用长按菜单"]	= false ;
+      ["点击事件"]	= "刷新网页()" ;
       } ;
   ["web_control"]	= {
       [1]	= {
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
           ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
           ["url"]	= "store.steampowered.com" ;
-          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
           } ;
       [2]	= {
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
           ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
           ["url"]	= "steamcommunity.com" ;
-          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
           } ;
       [3]	= {
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
           ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
           ["url"]	= "help.steampowered.com" ;
-          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
           } ;
-      } ;
-  ["toolbar"]	= {
-      ["icon_btns"]	= {
-          [1]	= {
-              ["onClick"]	= "退出页面()" ;
-              ["icon"]	= "chevron_left" ;
-              } ;
-          } ;
-      ["搜索URL"]	= "" ;
-      ["menus"]	= {
-          } ;
-      ["输入栏模式"]	= false ;
-      ["启用搜索功能"]	= false ;
-      ["搜索框提示"]	= "" ;
       } ;
   ["events"]	= {
       ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
-\
---接收参数\
-浏览器对象,网页链接=..." ;
-      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
-\
---接收参数\
-浏览器对象，新标题=...\
-\
-设置顶栏标题(webView.title)" ;
-      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
 \
 --接收参数\
 浏览器对象,网页链接=..." ;
@@ -247,5 +187,65 @@ task(200,function(JDPUK)--延时等待悬浮按钮准备好\
 end)\
 if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..\"32\" then error()end\
 --可移动悬浮按钮 End" ;
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
+\
+--接收参数\
+浏览器对象，新标题=...\
+\
+设置顶栏标题(webView.title)" ;
+      } ;
+  ["sidebar"]	= {
+      ["启用"]	= false ;
+      ["启用顶部图片"]	= false ;
+      ["items"]	= {
+          } ;
+      } ;
+  ["switch"]	= {
+      ["横屏"]	= false ;
+      ["启用启动图"]	= false ;
+      ["支持滑动页面"]	= true ;
+      ["显示状态栏"]	= true ;
+      } ;
+  ["toolbar"]	= {
+      ["搜索框提示"]	= "" ;
+      ["搜索URL"]	= "" ;
+      ["icon_btns"]	= {
+          [1]	= {
+              ["icon"]	= "chevron_left" ;
+              ["onClick"]	= "退出页面()" ;
+              } ;
+          } ;
+      ["启用搜索功能"]	= false ;
+      ["menus"]	= {
+          } ;
+      ["输入栏模式"]	= false ;
+      } ;
+  ["colors"]	= {
+      ["搜索栏背景"]	= "#ffffffff" ;
+      ["悬浮按钮"]	= "#ff171a21" ;
+      ["侧滑栏列表文字"]	= "#ff333333" ;
+      ["搜索栏提示文字"]	= "#80000000" ;
+      ["顶栏部件"]	= "#ffffffff" ;
+      ["顶栏部件触摸"]	= "#22ffffff" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["侧滑栏列表图标"]	= "#ff757575" ;
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["进度条"]	= "#00000000" ;
+      ["顶栏"]	= "#ff171a21" ;
+      ["导航栏"]	= "#ff171a21" ;
+      ["侧滑栏背景"]	= "#ffffffff" ;
+      } ;
+  ["view_attribute"]	= {
+      ["侧滑栏宽度"]	= "240dp" ;
+      ["顶栏高度"]	= "56dp" ;
+      ["搜索栏圆角弧度"]	= "2dp" ;
+      ["顶栏阴影强度"]	= "2dp" ;
+      ["顶栏标题"]	= "加载中..." ;
+      ["搜索栏阴影强度"]	= "2dp" ;
       } ;
   } ;
