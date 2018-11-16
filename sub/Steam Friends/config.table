@@ -1,50 +1,27 @@
 {
+  ["view_attribute"]	= {
+      ["搜索栏圆角弧度"]	= "2dp" ;
+      ["顶栏阴影强度"]	= "2dp" ;
+      ["顶栏标题"]	= "好友" ;
+      ["顶栏高度"]	= "0dp" ;
+      ["侧滑栏宽度"]	= "240dp" ;
+      ["搜索栏阴影强度"]	= "2dp" ;
+      } ;
   ["toolbar"]	= {
+      ["搜索URL"]	= "" ;
+      ["搜索框提示"]	= "" ;
       ["icon_btns"]	= {
           } ;
-      ["启用搜索功能"]	= false ;
-      ["输入栏模式"]	= false ;
-      ["搜索框提示"]	= "" ;
-      ["搜索URL"]	= "" ;
       ["menus"]	= {
           } ;
-      } ;
-  ["sidebar"]	= {
-      ["启用顶部图片"]	= false ;
-      ["启用"]	= false ;
-      ["items"]	= {
-          } ;
-      } ;
-  ["web"]	= {
-      ["网页沉浸"]	= false ;
-      ["启用进度条"]	= false ;
-      ["支持打开外部应用"]	= false ;
-      ["启动网页"]	= "https://steamcommunity.com/chat/" ;
-      ["浏览器用户标识"]	= "默认" ;
-      ["customUa"]	= "Steam" ;
-      ["启用长按菜单"]	= false ;
-      } ;
-  ["colors"]	= {
-      ["搜索栏部件触摸"]	= "#44000000" ;
-      ["悬浮按钮图标"]	= "#ffffffff" ;
-      ["侧滑栏列表图标"]	= "#ff757575" ;
-      ["搜索栏部件"]	= "#ff888888" ;
-      ["顶栏部件"]	= "#ff000000" ;
-      ["顶栏部件触摸"]	= "#22ffffff" ;
-      ["进度条"]	= "#00000000" ;
-      ["侧滑栏列表文字"]	= "#ff333333" ;
-      ["顶栏"]	= "#ff000000" ;
-      ["搜索栏提示文字"]	= "#ffffffff" ;
-      ["侧滑栏背景"]	= "#ffffffff" ;
-      ["导航栏"]	= "#ff171a21" ;
-      ["搜索栏背景"]	= "#ff373534" ;
-      ["悬浮按钮"]	= "#ff434953" ;
+      ["输入栏模式"]	= false ;
+      ["启用搜索功能"]	= false ;
       } ;
   ["events"]	= {
-      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
 \
 --接收参数\
-浏览器对象,网页链接=..." ;
+浏览器对象，新标题=..." ;
       ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
 \
 --接收参数\
@@ -84,6 +61,10 @@ if(网页链接:find\"https://steamcommunity.com/tradeoffer\")then\
   停止加载()\
   进入子页面(\"通用界面\",{链接=网页链接})\
 end--发送交易" ;
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
       ["程序启动"]	= "--远程安全漏洞补丁 Start\
 import 'android.webkit.WebView'\
 webView.addJavascriptInterface({},'JsInterface')\
@@ -240,30 +221,59 @@ task(200,function(JDPUK)--延时等待悬浮按钮准备好\
 end)\
 if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..\"32\" then error()end\
 --可移动悬浮按钮 End" ;
-      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
-\
---接收参数\
-浏览器对象，新标题=..." ;
       } ;
-  ["view_attribute"]	= {
-      ["搜索栏圆角弧度"]	= "2dp" ;
-      ["顶栏阴影强度"]	= "2dp" ;
-      ["搜索栏阴影强度"]	= "2dp" ;
-      ["顶栏高度"]	= "0dp" ;
-      ["侧滑栏宽度"]	= "240dp" ;
-      ["顶栏标题"]	= "好友" ;
+  ["colors"]	= {
+      ["搜索栏背景"]	= "#ff373534" ;
+      ["悬浮按钮"]	= "#ff434953" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["侧滑栏背景"]	= "#ffffffff" ;
+      ["顶栏部件触摸"]	= "#22ffffff" ;
+      ["侧滑栏列表图标"]	= "#ff757575" ;
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["进度条"]	= "#00000000" ;
+      ["侧滑栏列表文字"]	= "#ff333333" ;
+      ["搜索栏提示文字"]	= "#ffffffff" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["顶栏部件"]	= "#ff000000" ;
+      ["顶栏"]	= "#ff000000" ;
+      ["导航栏"]	= "#ff171a21" ;
+      } ;
+  ["web"]	= {
+      ["支持打开外部应用"]	= false ;
+      ["启用长按菜单"]	= false ;
+      ["启用进度条"]	= false ;
+      ["启动网页"]	= "https://steamcommunity.com/chat/" ;
+      ["网页沉浸"]	= false ;
+      ["customUa"]	= "Steam" ;
+      ["浏览器用户标识"]	= "默认" ;
+      } ;
+  ["web_control"]	= {
+      [2]	= {
+          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
+          ["url"]	= "steamcommunity.com" ;
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
+          } ;
+      [1]	= {
+          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
+          ["url"]	= "store.steampowered.com" ;
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
+          } ;
+      } ;
+  ["sidebar"]	= {
+      ["启用顶部图片"]	= false ;
+      ["启用"]	= false ;
+      ["items"]	= {
+          } ;
       } ;
   ["switch"]	= {
       ["支持滑动页面"]	= true ;
-      ["启用启动图"]	= false ;
-      ["显示状态栏"]	= true ;
       ["横屏"]	= false ;
-      } ;
-  ["web_control"]	= {
+      ["显示状态栏"]	= true ;
+      ["启用启动图"]	= false ;
       } ;
   ["fltBtn"]	= {
       ["显示"]	= true ;
-      ["图标"]	= "" ;
       ["点击事件"]	= "刷新网页()--悬浮按钮点击时执行的事件" ;
+      ["图标"]	= "" ;
       } ;
   } ;
