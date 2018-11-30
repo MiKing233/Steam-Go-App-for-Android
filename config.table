@@ -1,39 +1,89 @@
 {
-  ["switch"]	= {
-      ["显示状态栏"]	= true ;
-      ["启用启动图"]	= false ;
-      ["横屏"]	= false ;
-      ["支持滑动页面"]	= true ;
+  ["web_control"]	= {
+      [2]	= {
+          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
+          ["url"]	= "steamcommunity.com" ;
+          } ;
+      [1]	= {
+          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
+          ["url"]	= "store.steampowered.com" ;
+          } ;
       } ;
-  ["colors"]	= {
-      ["进度条"]	= "#00000000" ;
-      ["侧滑栏列表文字"]	= "#ffffffff" ;
-      ["搜索栏部件"]	= "#ff888888" ;
-      ["搜索栏背景"]	= "#ff171a21" ;
-      ["侧滑栏列表图标"]	= "#ffffffff" ;
-      ["悬浮按钮"]	= "#ff171a21" ;
-      ["侧滑栏背景"]	= "#00000000" ;
-      ["搜索栏提示文字"]	= "#ffffffff" ;
-      ["导航栏"]	= "#ff171a21" ;
-      ["顶栏部件触摸"]	= "#22ffffff" ;
-      ["搜索栏部件触摸"]	= "#44000000" ;
-      ["悬浮按钮图标"]	= "#ffffffff" ;
-      ["顶栏部件"]	= "#ffffffff" ;
-      ["顶栏"]	= "#ff171a21" ;
+  ["web"]	= {
+      ["支持打开外部应用"]	= false ;
+      ["启动网页"]	= "https://store.steampowered.com/account" ;
+      ["浏览器用户标识"]	= "默认" ;
+      ["启用长按菜单"]	= false ;
+      ["网页沉浸"]	= false ;
+      ["启用进度条"]	= false ;
       } ;
-  ["fltBtn"]	= {
-      ["图标"]	= "" ;
-      ["显示"]	= true ;
-      ["点击事件"]	= "--悬浮按钮点击时执行的事件\
-进入子页面(\"通用界面\",{链接=\"https://help.steampowered.com/zh-cn/accountdata\"})" ;
+  ["global_js"]	= "" ;
+  ["sidebar"]	= {
+      ["items"]	= {
+          [8]	= {
+              ["icon"]	= "drawable/ic_info_black_48dp.png" ;
+              ["onClick"]	= "进入子页面(\"关于Steam Go\")" ;
+              ["name"]	= "关于" ;
+              } ;
+          [1]	= {
+              ["icon"]	= "drawable/ic_style_black_48dp.png" ;
+              ["onClick"]	= "进入子页面(\"通用界面\",{链接=\"https://store.steampowered.com/search/?specials=1\"})" ;
+              ["name"]	= "特别优惠" ;
+              } ;
+          [2]	= {
+              ["icon"]	= "drawable/ic_store_black_48dp.png" ;
+              ["onClick"]	= "进入子页面(\"浏览商店\")" ;
+              ["name"]	= "浏览商店" ;
+              } ;
+          [3]	= {
+              ["icon"]	= "drawable/ic_group_work_black_48dp.png" ;
+              ["onClick"]	= "进入子页面(\"浏览社区\")\
+\
+Toast.makeText(activity,\"中国大陆地区可能需要科学上网\" , Toast.LENGTH_SHORT )\
+.show()" ;
+              ["name"]	= "浏览社区" ;
+              } ;
+          [4]	= {
+              ["icon"]	= "drawable/ic_face_black_48dp.png" ;
+              ["onClick"]	= "进入子页面(\"通用界面\",{链接=\"https://steamcommunity.com/login\"})\
+\
+Toast.makeText(activity,\"中国大陆地区可能需要科学上网\" , Toast.LENGTH_SHORT )\
+.show()" ;
+              ["name"]	= "我的资料" ;
+              } ;
+          [5]	= {
+              ["icon"]	= "drawable/ic_supervisor_account_black_48dp.png" ;
+              ["onClick"]	= "进入子页面(\"我的好友\")\
+\
+Toast.makeText(activity,\"中国大陆地区可能需要科学上网\" , Toast.LENGTH_SHORT )\
+.show()" ;
+              ["name"]	= "我的好友" ;
+              } ;
+          [6]	= {
+              ["icon"]	= "drawable/ic_loyalty_black_48dp.png" ;
+              ["onClick"]	= "进入子页面(\"通用界面\",{链接=\"https://store.steampowered.com/wishlist\"})" ;
+              ["name"]	= "愿望单" ;
+              } ;
+          [7]	= {
+              ["icon"]	= "drawable/ic_shopping_cart_black_48dp.png" ;
+              ["onClick"]	= "进入子页面(\"通用界面\",{链接=\"https://store.steampowered.com/cart\"})" ;
+              ["name"]	= "购物车" ;
+              } ;
+          } ;
+      ["启用"]	= true ;
+      ["启用顶部图片"]	= false ;
       } ;
   ["toolbar"]	= {
-      ["启用搜索功能"]	= false ;
+      ["搜索框提示"]	= "" ;
+      ["输入栏模式"]	= false ;
       ["menus"]	= {
           } ;
+      ["启用搜索功能"]	= false ;
+      ["搜索URL"]	= "" ;
       ["icon_btns"]	= {
           [2]	= {
-              ["icon"]	= "dots_vertical" ;
               ["onClick"]	= "EMUI5Dialog=require\"EMUI5Dialog\"\
 exitConfirmDialog=EMUI5Dialog()\
 --:setBackgroundColor(\"FFFFFFFF\")\
@@ -49,101 +99,53 @@ end)\
 进入子页面(\"通用界面\",{链接=\"https://store.steampowered.com/account/registerkey\"})\
 end)\
 :show()" ;
+              ["icon"]	= "dots_vertical" ;
               } ;
           [1]	= {
-              ["icon"]	= "ic_notifications_none_black_48dp" ;
               ["onClick"]	= "进入子页面(\"通用界面\",{链接=\"https://steamcommunity.com/profiles/76561198408205511/home/invites\"})" ;
+              ["icon"]	= "ic_notifications_none_black_48dp" ;
               } ;
           } ;
-      ["搜索URL"]	= "" ;
-      ["输入栏模式"]	= false ;
-      ["搜索框提示"]	= "" ;
-      } ;
-  ["sidebar"]	= {
-      ["启用顶部图片"]	= false ;
-      ["启用"]	= true ;
-      ["items"]	= {
-          [8]	= {
-              ["name"]	= "关于" ;
-              ["icon"]	= "drawable/ic_info_black_48dp.png" ;
-              ["onClick"]	= "进入子页面(\"关于Steam Go\")" ;
-              } ;
-          [1]	= {
-              ["name"]	= "特别优惠" ;
-              ["icon"]	= "drawable/ic_style_black_48dp.png" ;
-              ["onClick"]	= "进入子页面(\"通用界面\",{链接=\"https://store.steampowered.com/search/?specials=1\"})" ;
-              } ;
-          [2]	= {
-              ["name"]	= "浏览商店" ;
-              ["icon"]	= "drawable/ic_store_black_48dp.png" ;
-              ["onClick"]	= "进入子页面(\"浏览商店\")" ;
-              } ;
-          [3]	= {
-              ["name"]	= "浏览社区" ;
-              ["icon"]	= "drawable/ic_group_work_black_48dp.png" ;
-              ["onClick"]	= "进入子页面(\"浏览社区\")\
-\
-Toast.makeText(activity,\"中国大陆地区可能需要科学上网\" , Toast.LENGTH_SHORT )\
-.show()" ;
-              } ;
-          [4]	= {
-              ["name"]	= "我的资料" ;
-              ["icon"]	= "drawable/ic_face_black_48dp.png" ;
-              ["onClick"]	= "进入子页面(\"通用界面\",{链接=\"https://steamcommunity.com/login\"})\
-\
-Toast.makeText(activity,\"中国大陆地区可能需要科学上网\" , Toast.LENGTH_SHORT )\
-.show()" ;
-              } ;
-          [5]	= {
-              ["name"]	= "我的好友" ;
-              ["icon"]	= "drawable/ic_supervisor_account_black_48dp.png" ;
-              ["onClick"]	= "进入子页面(\"我的好友\")\
-\
-Toast.makeText(activity,\"中国大陆地区可能需要科学上网\" , Toast.LENGTH_SHORT )\
-.show()" ;
-              } ;
-          [6]	= {
-              ["name"]	= "愿望单" ;
-              ["icon"]	= "drawable/ic_loyalty_black_48dp.png" ;
-              ["onClick"]	= "进入子页面(\"通用界面\",{链接=\"https://store.steampowered.com/wishlist\"})" ;
-              } ;
-          [7]	= {
-              ["name"]	= "购物车" ;
-              ["icon"]	= "drawable/ic_shopping_cart_black_48dp.png" ;
-              ["onClick"]	= "进入子页面(\"通用界面\",{链接=\"https://store.steampowered.com/cart\"})" ;
-              } ;
-          } ;
-      } ;
-  ["web_control"]	= {
-      [2]	= {
-          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
-          ["url"]	= "steamcommunity.com" ;
-          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
-          } ;
-      [1]	= {
-          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
-          ["url"]	= "store.steampowered.com" ;
-          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
-          } ;
-      } ;
-  ["web"]	= {
-      ["浏览器用户标识"]	= "默认" ;
-      ["启用长按菜单"]	= false ;
-      ["网页沉浸"]	= false ;
-      ["启用进度条"]	= false ;
-      ["支持打开外部应用"]	= false ;
-      ["启动网页"]	= "https://store.steampowered.com/account" ;
       } ;
   ["view_attribute"]	= {
-      ["顶栏标题"]	= "Steam Go" ;
-      ["侧滑栏宽度"]	= "200dp" ;
-      ["顶栏高度"]	= "56dp" ;
       ["顶栏阴影强度"]	= "2dp" ;
-      ["搜索栏阴影强度"]	= "2dp" ;
+      ["顶栏高度"]	= "56dp" ;
       ["搜索栏圆角弧度"]	= "2dp" ;
+      ["侧滑栏宽度"]	= "200dp" ;
+      ["搜索栏阴影强度"]	= "2dp" ;
+      ["顶栏标题"]	= "Steam Go" ;
       } ;
-  ["global_js"]	= "" ;
+  ["colors"]	= {
+      ["搜索栏背景"]	= "#ff171a21" ;
+      ["悬浮按钮"]	= "#ff171a21" ;
+      ["侧滑栏列表图标"]	= "#ffffffff" ;
+      ["侧滑栏列表文字"]	= "#ffffffff" ;
+      ["导航栏"]	= "#ff171a21" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["搜索栏提示文字"]	= "#ffffffff" ;
+      ["侧滑栏背景"]	= "#00000000" ;
+      ["顶栏"]	= "#ff171a21" ;
+      ["进度条"]	= "#00000000" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["顶栏部件触摸"]	= "#22ffffff" ;
+      ["顶栏部件"]	= "#ffffffff" ;
+      } ;
+  ["switch"]	= {
+      ["支持滑动页面"]	= true ;
+      ["启用启动图"]	= false ;
+      ["显示状态栏"]	= true ;
+      ["横屏"]	= false ;
+      } ;
   ["events"]	= {
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
+\
+--接收参数\
+浏览器对象，新标题=..." ;
       ["程序启动"]	= "import \"android.app.*\"\
 import \"android.os.*\"\
 import \"android.widget.*\"\
@@ -171,6 +173,20 @@ activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGA
 \
 \
 \
+--下拉刷新 Start\
+import \"android.widget.*\"\
+import \"android.support.v4.widget.*\"\
+viewParent = webView.getParent()\
+viewParent.removeView(webView)\
+refresh = SwipeRefreshLayout(this)\
+refresh.setOnRefreshListener(SwipeRefreshLayout.OnRefreshListener({\
+  onRefresh=function()\
+    刷新网页()\
+  end\
+}));\
+refresh.addView(webView)\
+viewParent.addView(refresh)\
+--下拉刷新 End\
 \
 \
 \
@@ -226,7 +242,29 @@ function(code,content,cookie,header)\
         :setPositiveButton(\"暂不更新\",\
         function()\
         end,0xFFFF0000)\
-        :show()        \
+        :show()\
+        import \"android.R\"\
+        import \"android.widget.RemoteViews\"\
+        import \"android.net.Uri\"\
+        import \"android.content.Intent\"\
+        import \"android.content.Context\"\
+        import \"android.app.ActivityManager\"\
+        import \"android.app.PendingIntent\"\
+        import \"android.app.Notification\"\
+        import \"android.app.NotificationManager\"\
+\
+        notificationManager=activity.getSystemService(Context.NOTIFICATION_SERVICE)\
+        builder=Notification.Builder(this)\
+        mIntent=Intent(Intent.ACTION_VIEW,Uri.parse(\"https://www.coolapk.com/apk/com.miking.steam\"))\
+        pendingIntent=PendingIntent.getActivity(this,0,mIntent,0)\
+        builder.setContentIntent(pendingIntent)--点击事件\
+        builder.setSmallIcon(android.R.drawable.ic_menu_upload_you_tube)--图标\
+        builder.setContentTitle(\"检测到新版本可用\")--标题\
+        builder.setContentText(\"点击前往酷安更新新版本\")--消息\
+        notification=builder.build()\
+--[[remoteViews=RemoteViews(activity.getPackageName(),android.R.layout.simple_list_item_1)\
+notification.contentView=remoteViews]]\
+notificationManager.notify(1,notification)--发送通知        \
     end--2\
   else--1\
     EMUI5Dialog=require\"EMUI5Dialog\"    \
@@ -452,7 +490,7 @@ function()\
 end,0xFFFF0000)\
 :setNegativeButton(\"取消\",\
 function()\
-end,0xff1a73e8)\
+end,0xFF1A73E8)\
 :setOnDismissEvent(\
 function()--设置对话框关闭事件\
   exitConfirmDialog:setBlurBackgroundCacheEnable(false)--关闭模糊背景缓存，同时会清除已经缓存的模糊背景图片\
@@ -463,14 +501,6 @@ return true\
 end\
 end\
 --退出确认 End" ;
-      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
-\
---接收参数\
-浏览器对象,网页链接=..." ;
-      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
-\
---接收参数\
-浏览器对象，新标题=..." ;
       ["网页即将加载"]	= "浏览器对象,网页链接=...\
 \
 if(网页链接:find\"https://store.steampowered.com/app\") then\
@@ -512,7 +542,7 @@ exitConfirmDialog=EMUI5Dialog()\
 --:setView(loadlayout{Button,text=\"自定义布局\",onClick=function()exitConfirmDialog:dismiss()end})\
 :setPositiveButton(\"知道了\",\
 function()\
-end,0xff1a73e8)\
+end,0xFF1A73E8)\
 --:setCancelable(false)--设置禁止取消对话框\
 :setBlurBackgroundCacheEnable(true)--开启缓存，稍后修改时无需再次截图，注意如果不再用到，记得关闭模糊背景缓存以删除缓存的模糊背景图片\
 :setOnDismissEvent(\
@@ -521,5 +551,11 @@ function()--设置对话框关闭事件\
 end)\
 :show()\
 end--登录账户提示" ;
+      } ;
+  ["fltBtn"]	= {
+      ["图标"]	= "" ;
+      ["显示"]	= true ;
+      ["点击事件"]	= "--悬浮按钮点击时执行的事件\
+进入子页面(\"通用界面\",{链接=\"https://help.steampowered.com/zh-cn/accountdata\"})" ;
       } ;
   } ;

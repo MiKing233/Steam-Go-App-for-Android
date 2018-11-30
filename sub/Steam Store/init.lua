@@ -1,2 +1,2 @@
-name="浏览商店"
 template="tab"
+name="浏览商店"
