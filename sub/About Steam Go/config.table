@@ -1,13 +1,13 @@
 {
   ["events"]	= {
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
       ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
 \
 --接收参数\
 浏览器对象,网页链接=..." ;
-      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
-\
---接收参数\
-浏览器对象，新标题=..." ;
       ["程序启动"]	= "--导航栏沉浸 Start\
 activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)\
 --导航栏沉浸 End\
@@ -373,7 +373,7 @@ onclick={--项目点击事件\
 function()--版本点击事件 Start\
   EMUI5Dialog=require\"EMUI5Dialog\"    \
   exitConfirmDialog=EMUI5Dialog()\
-  :setTitle(\"Steam Go版本\")  \
+  :setTitle(\"Steam Go 程序版本\")  \
   :setMessage(version)\
   \
   :setNegativeButton(\"在酷安查看\",\
@@ -530,8 +530,8 @@ function()--捐赠点击事件 Start\
     exitConfirmDialog=EMUI5Dialog()\
     --:setBackgroundColor(\"FFFFFFFF\")\
     :setTitle(\"支付宝支付\")\
-    :setMessage(\"这将跳转到支付宝付款页面\")\
-    :setNegativeButton(\"跳转到 支付宝 \",\
+    :setMessage(\"Steam Go将唤起支付宝并跳转到转账页面\")\
+    :setNegativeButton(\"唤醒支付宝\",\
     function()\
       Toast.makeText(activity,\"谢谢老板 正在唤醒支付宝，请耐心等待\" , Toast.LENGTH_SHORT )\
       .show()\
@@ -571,6 +571,7 @@ function()--捐赠点击事件 Start\
     };\
     AlertDialog.Builder(this)\
     .setTitle(\"微信支付\")\
+    .setMessage(\"\\n如果你喜欢，请随意捐赠\\n\")\
     .setView(loadlayout(AboutLayout))\
     .setPositiveButton(\"跳转到 微信 \",{onClick=\
     function(v)\
@@ -580,9 +581,9 @@ function()--捐赠点击事件 Start\
       import \"android.content.Intent\"\
       import \"android.content.pm.PackageManager\"\
       manager = activity.getPackageManager()\
-      open = manager.getLaunchIntentForPackage(packageName)\
+      open = manager.getLaunchIntentForPackage(packageName)--打开微信程式\
       this.startActivity(open)\
-    end})--打开微信程式\
+    end})\
     .show()\
   end,0xFF22BB2D)\
 \
@@ -644,70 +645,70 @@ list.onItemClick=function(adp,view,pos,id)\
   end\
 \
 end" ;
-      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
 \
 --接收参数\
-浏览器对象,网页链接=..." ;
+浏览器对象，新标题=..." ;
       } ;
-  ["fltBtn"]	= {
-      ["图标"]	= "" ;
-      ["点击事件"]	= "--悬浮按钮点击时执行的事件" ;
-      ["显示"]	= false ;
-      } ;
-  ["toolbar"]	= {
-      ["menus"]	= {
-          } ;
-      ["搜索框提示"]	= "" ;
-      ["启用搜索功能"]	= false ;
-      ["搜索URL"]	= "" ;
-      ["icon_btns"]	= {
-          } ;
-      ["输入栏模式"]	= false ;
-      } ;
-  ["switch"]	= {
-      ["横屏"]	= false ;
-      ["显示状态栏"]	= true ;
-      ["启用启动图"]	= false ;
-      ["支持滑动页面"]	= false ;
-      } ;
-  ["colors"]	= {
-      ["搜索栏背景"]	= "#ffffffff" ;
-      ["进度条"]	= "#00000000" ;
-      ["悬浮按钮"]	= "#ff171a21" ;
-      ["侧滑栏背景"]	= "#ffffffff" ;
-      ["顶栏部件触摸"]	= "#22ffffff" ;
-      ["悬浮按钮图标"]	= "#ffffffff" ;
-      ["搜索栏部件"]	= "#ff888888" ;
-      ["侧滑栏列表图标"]	= "#ff757575" ;
-      ["顶栏部件"]	= "#ffffffff" ;
-      ["搜索栏提示文字"]	= "#80000000" ;
-      ["侧滑栏列表文字"]	= "#ff333333" ;
-      ["导航栏"]	= "#00000000" ;
-      ["顶栏"]	= "#ff171a21" ;
-      ["搜索栏部件触摸"]	= "#44000000" ;
-      } ;
-  ["web"]	= {
-      ["启动网页"]	= "" ;
-      ["支持打开外部应用"]	= false ;
-      ["浏览器用户标识"]	= "默认" ;
-      ["网页沉浸"]	= false ;
-      ["启用长按菜单"]	= false ;
-      ["启用进度条"]	= false ;
-      } ;
-  ["web_control"]	= {
+  ["view_attribute"]	= {
+      ["顶栏标题"]	= "Title" ;
+      ["顶栏阴影强度"]	= "2dp" ;
+      ["搜索栏阴影强度"]	= "2dp" ;
+      ["顶栏高度"]	= "0dp" ;
+      ["侧滑栏宽度"]	= "240dp" ;
+      ["搜索栏圆角弧度"]	= "2dp" ;
       } ;
   ["sidebar"]	= {
-      ["启用顶部图片"]	= false ;
       ["items"]	= {
           } ;
       ["启用"]	= false ;
+      ["启用顶部图片"]	= false ;
       } ;
-  ["view_attribute"]	= {
-      ["顶栏高度"]	= "0dp" ;
-      ["顶栏标题"]	= "Title" ;
-      ["顶栏阴影强度"]	= "2dp" ;
-      ["搜索栏圆角弧度"]	= "2dp" ;
-      ["侧滑栏宽度"]	= "240dp" ;
-      ["搜索栏阴影强度"]	= "2dp" ;
+  ["web_control"]	= {
+      } ;
+  ["switch"]	= {
+      ["支持滑动页面"]	= false ;
+      ["横屏"]	= false ;
+      ["启用启动图"]	= false ;
+      ["显示状态栏"]	= true ;
+      } ;
+  ["toolbar"]	= {
+      ["输入栏模式"]	= false ;
+      ["menus"]	= {
+          } ;
+      ["启用搜索功能"]	= false ;
+      ["icon_btns"]	= {
+          } ;
+      ["搜索URL"]	= "" ;
+      ["搜索框提示"]	= "" ;
+      } ;
+  ["web"]	= {
+      ["浏览器用户标识"]	= "默认" ;
+      ["启用进度条"]	= false ;
+      ["网页沉浸"]	= false ;
+      ["支持打开外部应用"]	= false ;
+      ["启动网页"]	= "" ;
+      ["启用长按菜单"]	= false ;
+      } ;
+  ["fltBtn"]	= {
+      ["点击事件"]	= "--悬浮按钮点击时执行的事件" ;
+      ["图标"]	= "" ;
+      ["显示"]	= false ;
+      } ;
+  ["colors"]	= {
+      ["搜索栏提示文字"]	= "#80000000" ;
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["进度条"]	= "#00000000" ;
+      ["侧滑栏背景"]	= "#ffffffff" ;
+      ["顶栏部件"]	= "#ffffffff" ;
+      ["侧滑栏列表文字"]	= "#ff333333" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["导航栏"]	= "#00000000" ;
+      ["搜索栏背景"]	= "#ffffffff" ;
+      ["侧滑栏列表图标"]	= "#ff757575" ;
+      ["顶栏部件触摸"]	= "#22ffffff" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["悬浮按钮"]	= "#ff171a21" ;
+      ["顶栏"]	= "#ff171a21" ;
       } ;
   } ;
