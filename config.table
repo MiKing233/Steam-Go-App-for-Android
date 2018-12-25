@@ -1,9 +1,128 @@
 {
-  ["switch"]	= {
-      ["横屏"]	= false ;
-      ["启用启动图"]	= false ;
-      ["显示状态栏"]	= true ;
-      ["支持滑动页面"]	= true ;
+  ["colors"]	= {
+      ["侧滑栏列表文字"]	= "#ffffffff" ;
+      ["进度条"]	= "#00000000" ;
+      ["搜索栏提示文字"]	= "#ffffffff" ;
+      ["搜索栏背景"]	= "#ff171a21" ;
+      ["顶栏部件"]	= "#ffffffff" ;
+      ["侧滑栏背景"]	= "#00000000" ;
+      ["顶栏"]	= "#ff171a21" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["侧滑栏列表图标"]	= "#ffffffff" ;
+      ["顶栏部件触摸"]	= "#22ffffff" ;
+      ["导航栏"]	= "#ff171a21" ;
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["悬浮按钮"]	= "#ff171a21" ;
+      } ;
+  ["fltBtn"]	= {
+      ["图标"]	= "" ;
+      ["显示"]	= true ;
+      ["点击事件"]	= "--悬浮按钮点击时执行的事件\
+进入子页面(\"通用界面\",{链接=\"https://help.steampowered.com/zh-cn/accountdata\"})" ;
+      } ;
+  ["view_attribute"]	= {
+      ["顶栏阴影强度"]	= "2dp" ;
+      ["搜索栏阴影强度"]	= "2dp" ;
+      ["顶栏标题"]	= "Steam Go" ;
+      ["搜索栏圆角弧度"]	= "2dp" ;
+      ["侧滑栏宽度"]	= "200dp" ;
+      ["顶栏高度"]	= "56dp" ;
+      } ;
+  ["sidebar"]	= {
+      ["启用顶部图片"]	= false ;
+      ["启用"]	= true ;
+      ["items"]	= {
+          [8]	= {
+              ["name"]	= "关于" ;
+              ["onClick"]	= "进入子页面(\"关于Steam Go\")" ;
+              ["icon"]	= "drawable/ic_info_black_48dp.png" ;
+              } ;
+          [1]	= {
+              ["name"]	= "特别优惠" ;
+              ["onClick"]	= "进入子页面(\"通用界面\",{链接=\"https://store.steampowered.com/search/?specials=1\"})" ;
+              ["icon"]	= "drawable/ic_style_black_48dp.png" ;
+              } ;
+          [2]	= {
+              ["name"]	= "浏览商店" ;
+              ["onClick"]	= "进入子页面(\"浏览商店\")" ;
+              ["icon"]	= "drawable/ic_store_black_48dp.png" ;
+              } ;
+          [3]	= {
+              ["name"]	= "浏览社区" ;
+              ["onClick"]	= "进入子页面(\"浏览社区\")\
+\
+Toast.makeText(activity,\"中国大陆地区可能需要科学上网\" , Toast.LENGTH_SHORT )\
+.show()" ;
+              ["icon"]	= "drawable/ic_group_work_black_48dp.png" ;
+              } ;
+          [4]	= {
+              ["name"]	= "我的资料" ;
+              ["onClick"]	= "进入子页面(\"通用界面\",{链接=\"https://steamcommunity.com/login\"})\
+\
+Toast.makeText(activity,\"中国大陆地区可能需要科学上网\" , Toast.LENGTH_SHORT )\
+.show()" ;
+              ["icon"]	= "drawable/ic_face_black_48dp.png" ;
+              } ;
+          [5]	= {
+              ["name"]	= "我的好友" ;
+              ["onClick"]	= "进入子页面(\"我的好友\")\
+\
+Toast.makeText(activity,\"中国大陆地区可能需要科学上网\" , Toast.LENGTH_SHORT )\
+.show()" ;
+              ["icon"]	= "drawable/ic_supervisor_account_black_48dp.png" ;
+              } ;
+          [6]	= {
+              ["name"]	= "愿望单" ;
+              ["onClick"]	= "进入子页面(\"通用界面\",{链接=\"https://store.steampowered.com/wishlist\"})" ;
+              ["icon"]	= "drawable/ic_loyalty_black_48dp.png" ;
+              } ;
+          [7]	= {
+              ["name"]	= "购物车" ;
+              ["onClick"]	= "进入子页面(\"通用界面\",{链接=\"https://store.steampowered.com/cart\"})" ;
+              ["icon"]	= "drawable/ic_shopping_cart_black_48dp.png" ;
+              } ;
+          } ;
+      } ;
+  ["toolbar"]	= {
+      ["搜索URL"]	= "" ;
+      ["icon_btns"]	= {
+          [2]	= {
+              ["onClick"]	= "EMUI5Dialog=require\"EMUI5Dialog\"\
+exitConfirmDialog=EMUI5Dialog()\
+--:setBackgroundColor(\"FFFFFFFF\")\
+:setTitle(\"\")\
+:setMessage(\"\")\
+:setNegativeButton(\"Steam客服\",function()\
+进入子页面(\"通用界面\",{链接=\"https://help.steampowered.com/zh-cn\"})\
+end)\
+:setNeutralButton(\"近期购买记录\",function()\
+进入子页面(\"通用界面\",{链接=\"https://help.steampowered.com/zh-cn/wizard/HelpWithPurchase\"})\
+end)\
+:setPositiveButton(\"在Steam上激活产品\",function()\
+进入子页面(\"通用界面\",{链接=\"https://store.steampowered.com/account/registerkey\"})\
+end)\
+:show()" ;
+              ["icon"]	= "dots_vertical" ;
+              } ;
+          [1]	= {
+              ["onClick"]	= "进入子页面(\"通用界面\",{链接=\"https://steamcommunity.com/profiles/76561198408205511/home/invites\"})" ;
+              ["icon"]	= "ic_notifications_none_black_48dp" ;
+              } ;
+          } ;
+      ["输入栏模式"]	= false ;
+      ["搜索框提示"]	= "" ;
+      ["menus"]	= {
+          } ;
+      ["启用搜索功能"]	= false ;
+      } ;
+  ["web"]	= {
+      ["启用进度条"]	= false ;
+      ["浏览器用户标识"]	= "默认" ;
+      ["启用长按菜单"]	= false ;
+      ["启动网页"]	= "https://store.steampowered.com/account" ;
+      ["支持打开外部应用"]	= false ;
+      ["网页沉浸"]	= false ;
       } ;
   ["events"]	= {
       ["网页即将加载"]	= "浏览器对象,网页链接=...\
@@ -231,11 +350,9 @@ drawerLayout.setDrawerListener(DrawerLayout.DrawerListener{\
 \
 \
 --可移动悬浮按钮Start\
---获得屏幕宽高\
 local w=this.getWidth()\
 local h=this.getHeight()\
 \
---获取状态栏高度\
 local function getStatusBarHeight(JDPUK)\
   if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..\"32\" then error()end\
   local resid=activity.getResources().getIdentifier(\"status_bar_height\",\"dimen\",\"android\")\
@@ -245,76 +362,70 @@ local function getStatusBarHeight(JDPUK)\
 end\
 jdpuk=32552732\
 \
---设置悬浮按钮位置\
 local function setFloatButtonPosition(X,Y,J,D,P,U,K)\
   if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..\"32\" then error()end\
-  fltBtn.LayoutParams=fltBtn.LayoutParams.setMargins(0,0,w-X-fltBtn.getMeasuredWidth()/2,h-Y-fltBtn.getMeasuredHeight()/2)-- 3 2 5 5 2 7 3 2\
-  --保存悬浮按钮位置\
+  fltBtn.LayoutParams=fltBtn.LayoutParams.setMargins(0,0,w-X-fltBtn.getMeasuredWidth()/2,h-Y-fltBtn.getMeasuredHeight()/2)\
   this.setSharedData(\"悬浮按钮横坐标\",X)\
   this.setSharedData(\"悬浮按钮纵坐标\",Y)\
 end\
 \
---初始化按下起始位置\
+task(200,function(JDPUK)\
+  if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..tostring(3)..\"2\" then error()end\
+  local x=this.getSharedData(\"悬浮按钮横坐标\")\
+  local y=this.getSharedData(\"悬浮按钮纵坐标\")\
+  if x and y then setFloatButtonPosition(x,y) end\
+end)\
+\
 local sx\
 local sy\
 \
---设置移动条件(最小移动范围)\
 local mr=50\
---初始化是否移动\
 local cm=false\
 \
---设置自动校准范围\
 local tr=50\
---设置自动校准坐标\
 local tp={\
-  {0,nil},--左贴边\
-  {nil,0},--上贴边\
-  {w,nil},--右贴边\
-  {nil,h},--下贴边\
+  {0,nil},\
+  {nil,0},\
+  {w,nil},\
+  {nil,h},\
 }\
-task(200,function(JDPUK)--一些需要用到悬浮按钮参数的坐标，得延时等悬浮按钮准备好\
+task(200,function(JDPUK)\
   if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..\"32\" then error()end\
-  table.insert(tp,{w/2+1,h-fltBtn.getMeasuredHeight()})--约中下位置\
+  table.insert(tp,{w/2+1,h-fltBtn.getMeasuredHeight()})\
   --table.insert(tp,{w-fltBtn.getMeasuredWidth()/2,h-fltBtn.getMeasuredHeight()/2})\
 end)\
 \
---监听悬浮按钮被按下事件\
-task(200,function(JDPUK)--延时等待悬浮按钮准备好\
+task(200,function(JDPUK)\
   if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..\"32\" then error()end\
-  fltBtn.getChildAt(0).onTouch=function(view,event,JDPUK)--悬浮按钮本身无法监听点击事件，找子控件监听\
+  fltBtn.getChildAt(0).onTouch=function(view,event,JDPUK)\
     if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..\"32\" then error()end\
 \
-    --得到手指当前位置\
     local x=event.getRawX()\
     local y=event.getRawY()\
 \
-    if event.getAction()==MotionEvent.ACTION_DOWN then--如果是按下事件，则保存按下的位置\
+    if event.getAction()==MotionEvent.ACTION_DOWN then\
       if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..\"32\" then error()end\
-      --保存按下位置\
       sx=x\
       sy=y\
       return false\
-    elseif event.getAction()==MotionEvent.ACTION_MOVE then--如果是移动事件，则移动悬浮按钮\
+    elseif event.getAction()==MotionEvent.ACTION_MOVE then\
       if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..\"32\" then error()end\
 \
       if cm then\
 \
         --fltBtn.LayoutParams=fltBtn.LayoutParams.setMargins(0,0,this.getWidth()-event.getRawX()-fltBtn.getMeasuredWidth()/2,this.getHeight()-event.getRawY()-fltBtn.getMeasuredHeight()/2)\
 \
-        --初始化悬浮按钮位置\
         local X=x\
         local Y=y\
 \
         --[[\
 \
-        --设置自动贴边范围\
         local tr=25\
 \
-        --自动贴边\
-        if x<=0+tr then X=0 end--左\
-        if y<=0+tr then Y=0 end--上\
-        if x>=w-tr then X=w end--右\
-        if y>=h-tr then Y=h end--下\
+        if x<=0+tr then X=0 end\
+        if y<=0+tr then Y=0 end\
+        if x>=w-tr then X=w end\
+        if y>=h-tr then Y=h end\
 \
         ]]\
 \
@@ -325,39 +436,32 @@ task(200,function(JDPUK)--延时等待悬浮按钮准备好\
           end\
         end\
 \
-        --防止悬浮按钮超出屏幕(其实可以省略)\
-        if X<0 then X=0 end--左\
-        if Y<0 then Y=0 end--上\
-        if X>w then X=w end--右\
-        if Y>h then Y=h end--下\
+        if X<0 then X=0 end\
+        if Y<0 then Y=0 end\
+        if X>w then X=w end\
+        if Y>h then Y=h end\
 \
-        --防止悬浮按钮高于状态栏导致无法移动\
         if Y<getStatusBarHeight() then Y=getStatusBarHeight() end\
 \
-        --设置悬浮按钮位置\
         setFloatButtonPosition(X,Y)\
 \
-        return true--消费该事件\
-\
+        return true\
+        \
       else\
 \
-        --设置移动条件\
-        cm=(sx and sy and math.abs((x+y)-(sx+sy))>=mr and jdpuk==tonumber(\"3255\"..\"2732\"))--32552732\
+        cm=(sx and sy and math.abs((x+y)-(sx+sy))>=mr and jdpuk==tonumber(\"3255\"..\"2732\"))\
 \
         return false\
       end\
-    elseif event.getAction()==MotionEvent.ACTION_UP then--如果是松开事件，则...嗯处理一些东西，自己看吧\
+    elseif event.getAction()==MotionEvent.ACTION_UP then\
       if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..tostring(32) then error()end\
 \
-      --重置变量前先把需要的变量保存为局部变量\
       local tmp=cm\
 \
-      --重置变量\
       sx=nil\
       sy=nil\
       cm=false\
 \
-      --如果本次按下符合移动条件，则消费事件\
       if tmp then\
         return true\
       else\
@@ -411,151 +515,37 @@ return true\
 end\
 end\
 --退出确认 End" ;
-      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
-\
---接收参数\
-浏览器对象,网页链接=..." ;
       ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
 \
 --接收参数\
 浏览器对象，新标题=..." ;
-      } ;
-  ["fltBtn"]	= {
-      ["点击事件"]	= "--悬浮按钮点击时执行的事件\
-进入子页面(\"通用界面\",{链接=\"https://help.steampowered.com/zh-cn/accountdata\"})" ;
-      ["显示"]	= true ;
-      ["图标"]	= "" ;
-      } ;
-  ["toolbar"]	= {
-      ["搜索URL"]	= "" ;
-      ["icon_btns"]	= {
-          [2]	= {
-              ["icon"]	= "dots_vertical" ;
-              ["onClick"]	= "EMUI5Dialog=require\"EMUI5Dialog\"\
-exitConfirmDialog=EMUI5Dialog()\
---:setBackgroundColor(\"FFFFFFFF\")\
-:setTitle(\"\")\
-:setMessage(\"\")\
-:setNegativeButton(\"Steam客服\",function()\
-进入子页面(\"通用界面\",{链接=\"https://help.steampowered.com/zh-cn\"})\
-end)\
-:setNeutralButton(\"近期购买记录\",function()\
-进入子页面(\"通用界面\",{链接=\"https://help.steampowered.com/zh-cn/wizard/HelpWithPurchase\"})\
-end)\
-:setPositiveButton(\"在Steam上激活产品\",function()\
-进入子页面(\"通用界面\",{链接=\"https://store.steampowered.com/account/registerkey\"})\
-end)\
-:show()" ;
-              } ;
-          [1]	= {
-              ["icon"]	= "ic_notifications_none_black_48dp" ;
-              ["onClick"]	= "进入子页面(\"通用界面\",{链接=\"https://steamcommunity.com/profiles/76561198408205511/home/invites\"})" ;
-              } ;
-          } ;
-      ["启用搜索功能"]	= false ;
-      ["输入栏模式"]	= false ;
-      ["搜索框提示"]	= "" ;
-      ["menus"]	= {
-          } ;
-      } ;
-  ["web"]	= {
-      ["启用进度条"]	= false ;
-      ["启用长按菜单"]	= false ;
-      ["启动网页"]	= "https://store.steampowered.com/account" ;
-      ["浏览器用户标识"]	= "默认" ;
-      ["支持打开外部应用"]	= false ;
-      ["网页沉浸"]	= false ;
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
       } ;
   ["web_control"]	= {
-      [2]	= {
-          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
-          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
-          ["url"]	= "steamcommunity.com" ;
-          } ;
       [1]	= {
-          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
-          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
           ["url"]	= "store.steampowered.com" ;
+          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
+          } ;
+      [2]	= {
+          ["url"]	= "steamcommunity.com" ;
+          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
+          } ;
+      [3]	= {
+          ["url"]	= "help.steampowered.com" ;
+          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
           } ;
       } ;
-  ["view_attribute"]	= {
-      ["搜索栏圆角弧度"]	= "2dp" ;
-      ["侧滑栏宽度"]	= "200dp" ;
-      ["顶栏标题"]	= "Steam Go" ;
-      ["顶栏阴影强度"]	= "2dp" ;
-      ["搜索栏阴影强度"]	= "2dp" ;
-      ["顶栏高度"]	= "56dp" ;
-      } ;
-  ["sidebar"]	= {
-      ["items"]	= {
-          [8]	= {
-              ["name"]	= "关于" ;
-              ["icon"]	= "drawable/ic_info_black_48dp.png" ;
-              ["onClick"]	= "进入子页面(\"关于Steam Go\")" ;
-              } ;
-          [1]	= {
-              ["name"]	= "特别优惠" ;
-              ["icon"]	= "drawable/ic_style_black_48dp.png" ;
-              ["onClick"]	= "进入子页面(\"通用界面\",{链接=\"https://store.steampowered.com/search/?specials=1\"})" ;
-              } ;
-          [2]	= {
-              ["name"]	= "浏览商店" ;
-              ["icon"]	= "drawable/ic_store_black_48dp.png" ;
-              ["onClick"]	= "进入子页面(\"浏览商店\")" ;
-              } ;
-          [3]	= {
-              ["name"]	= "浏览社区" ;
-              ["icon"]	= "drawable/ic_group_work_black_48dp.png" ;
-              ["onClick"]	= "进入子页面(\"浏览社区\")\
-\
-Toast.makeText(activity,\"中国大陆地区可能需要科学上网\" , Toast.LENGTH_SHORT )\
-.show()" ;
-              } ;
-          [4]	= {
-              ["name"]	= "我的资料" ;
-              ["icon"]	= "drawable/ic_face_black_48dp.png" ;
-              ["onClick"]	= "进入子页面(\"通用界面\",{链接=\"https://steamcommunity.com/login\"})\
-\
-Toast.makeText(activity,\"中国大陆地区可能需要科学上网\" , Toast.LENGTH_SHORT )\
-.show()" ;
-              } ;
-          [5]	= {
-              ["name"]	= "我的好友" ;
-              ["icon"]	= "drawable/ic_supervisor_account_black_48dp.png" ;
-              ["onClick"]	= "进入子页面(\"我的好友\")\
-\
-Toast.makeText(activity,\"中国大陆地区可能需要科学上网\" , Toast.LENGTH_SHORT )\
-.show()" ;
-              } ;
-          [6]	= {
-              ["name"]	= "愿望单" ;
-              ["icon"]	= "drawable/ic_loyalty_black_48dp.png" ;
-              ["onClick"]	= "进入子页面(\"通用界面\",{链接=\"https://store.steampowered.com/wishlist\"})" ;
-              } ;
-          [7]	= {
-              ["name"]	= "购物车" ;
-              ["icon"]	= "drawable/ic_shopping_cart_black_48dp.png" ;
-              ["onClick"]	= "进入子页面(\"通用界面\",{链接=\"https://store.steampowered.com/cart\"})" ;
-              } ;
-          } ;
-      ["启用"]	= true ;
-      ["启用顶部图片"]	= false ;
+  ["switch"]	= {
+      ["横屏"]	= false ;
+      ["支持滑动页面"]	= true ;
+      ["显示状态栏"]	= true ;
+      ["启用启动图"]	= false ;
       } ;
   ["global_js"]	= "" ;
-  ["colors"]	= {
-      ["侧滑栏背景"]	= "#00000000" ;
-      ["悬浮按钮"]	= "#ff171a21" ;
-      ["搜索栏背景"]	= "#ff171a21" ;
-      ["侧滑栏列表图标"]	= "#ffffffff" ;
-      ["搜索栏部件"]	= "#ff888888" ;
-      ["导航栏"]	= "#ff171a21" ;
-      ["顶栏部件"]	= "#ffffffff" ;
-      ["搜索栏部件触摸"]	= "#44000000" ;
-      ["进度条"]	= "#00000000" ;
-      ["侧滑栏列表文字"]	= "#ffffffff" ;
-      ["搜索栏提示文字"]	= "#ffffffff" ;
-      ["悬浮按钮图标"]	= "#ffffffff" ;
-      ["顶栏"]	= "#ff171a21" ;
-      ["顶栏部件触摸"]	= "#22ffffff" ;
-      } ;
   } ;
