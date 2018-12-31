@@ -1,2 +1,2 @@
 template="tool"
-name="我的好友"
+name="Steam Friends"

@@ -1,2 +1,2 @@
-name="浏览商店"
+name="Steam Store"
 template="tab"

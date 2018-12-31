@@ -1,0 +1,2 @@
+name="Discounted"
+template="tab"
