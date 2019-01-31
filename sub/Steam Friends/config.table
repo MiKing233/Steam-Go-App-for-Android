@@ -1,17 +1,22 @@
 {
+  ["fltBtn"]	= {
+      ["点击事件"]	= "刷新网页()--悬浮按钮点击时执行的事件" ;
+      ["图标"]	= "" ;
+      ["显示"]	= true ;
+      } ;
+  ["view_attribute"]	= {
+      ["顶栏高度"]	= "56dp" ;
+      ["搜索栏圆角弧度"]	= "2dp" ;
+      ["顶栏阴影强度"]	= "2dp" ;
+      ["侧滑栏宽度"]	= "240dp" ;
+      ["搜索栏阴影强度"]	= "2dp" ;
+      ["顶栏标题"]	= "Steam 好友" ;
+      } ;
   ["switch"]	= {
       ["支持滑动页面"]	= true ;
       ["显示状态栏"]	= true ;
-      ["启用启动图"]	= false ;
       ["横屏"]	= false ;
-      } ;
-  ["view_attribute"]	= {
-      ["侧滑栏宽度"]	= "240dp" ;
-      ["顶栏阴影强度"]	= "2dp" ;
-      ["搜索栏阴影强度"]	= "2dp" ;
-      ["顶栏标题"]	= "Steam 好友" ;
-      ["搜索栏圆角弧度"]	= "2dp" ;
-      ["顶栏高度"]	= "0dp" ;
+      ["启用启动图"]	= false ;
       } ;
   ["sidebar"]	= {
       ["启用顶部图片"]	= false ;
@@ -19,90 +24,35 @@
       ["items"]	= {
           } ;
       } ;
-  ["web"]	= {
-      ["启用进度条"]	= false ;
-      ["启用长按菜单"]	= false ;
-      ["启动网页"]	= "https://steamcommunity.com/chat/" ;
-      ["支持打开外部应用"]	= false ;
-      ["customUa"]	= "Steam" ;
-      ["网页沉浸"]	= false ;
-      ["浏览器用户标识"]	= "默认" ;
-      } ;
-  ["toolbar"]	= {
-      ["搜索URL"]	= "" ;
-      ["搜索框提示"]	= "" ;
-      ["启用搜索功能"]	= false ;
-      ["输入栏模式"]	= false ;
-      ["icon_btns"]	= {
-          } ;
-      ["menus"]	= {
-          } ;
-      } ;
-  ["fltBtn"]	= {
-      ["图标"]	= "" ;
-      ["显示"]	= true ;
-      ["点击事件"]	= "刷新网页()--悬浮按钮点击时执行的事件" ;
-      } ;
   ["web_control"]	= {
       [2]	= {
-          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
           ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
           ["url"]	= "steamcommunity.com" ;
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
           } ;
       [1]	= {
-          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
           ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
           ["url"]	= "store.steampowered.com" ;
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
           } ;
       } ;
+  ["colors"]	= {
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["进度条"]	= "#00000000" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["顶栏"]	= "#ff171a21" ;
+      ["顶栏部件"]	= "#ffffffff" ;
+      ["侧滑栏背景"]	= "#ffffffff" ;
+      ["悬浮按钮"]	= "#ff171a21" ;
+      ["侧滑栏列表图标"]	= "#ff757575" ;
+      ["顶栏部件触摸"]	= "#22ffffff" ;
+      ["搜索栏提示文字"]	= "#ffffffff" ;
+      ["侧滑栏列表文字"]	= "#ff333333" ;
+      ["导航栏"]	= "#ff171a21" ;
+      ["搜索栏背景"]	= "#ff373534" ;
+      } ;
   ["events"]	= {
-      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
-\
---接收参数\
-浏览器对象,网页链接=..." ;
-      ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
-\
---接收参数\
-浏览器对象,网页链接=...\
-\
-if(网页链接:find\"https://store.steampowered.com/app\") then\
-  停止加载()\
-  进入子页面(\"Universal UI\",{链接=网页链接})\
-end--应用详情\
-\
-if(网页链接:find\"https://store.steampowered.com/search\")then\
-  停止加载()\
-  进入子页面(\"Universal UI\",{链接=网页链接})\
-end--搜索结果\
-\
-if(网页链接:find\"https://store.steampowered.com/account/registerkey\")then\
-  停止加载()\
-  进入子页面(\"Universal UI\",{链接=网页链接})\
-end--产品激活\
-\
-if(网页链接:find\"https://store.steampowered.com/account/wishlist\")then\
-  停止加载()\
-  进入子页面(\"Universal UI\",{链接=网页链接})\
-end--愿望单\
-\
-if(网页链接:find\"https://store.steampowered.com/account/cart\")then\
-  停止加载()\
-  进入子页面(\"Universal UI\",{链接=网页链接})\
-end--购物车\
-\
-if(网页链接:find\"https://steamcommunity.com/profiles/\")then\
-  停止加载()\
-  进入子页面(\"Universal UI\",{链接=网页链接})\
-end--用户资料\
-\
-if(网页链接:find\"https://steamcommunity.com/tradeoffer\")then\
-  停止加载()\
-  进入子页面(\"Universal UI\",{链接=网页链接})\
-end--发送交易" ;
-      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
-\
---接收参数\
-浏览器对象，新标题=..." ;
       ["程序启动"]	= "--远程安全漏洞补丁 Start\
 import 'android.webkit.WebView'\
 webView.addJavascriptInterface({},'JsInterface')\
@@ -238,38 +188,98 @@ task(200,function(JDPUK)\
   end\
 end)\
 if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..\"32\" then error()end\
---可移动悬浮按钮 End\
+--可移动悬浮按钮 End" ;
+      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
 \
+--接收参数\
+浏览器对象，新标题=..." ;
+      ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
 \
+--接收参数\
+浏览器对象,网页链接=...\
 \
+if(网页链接:find\"https://store.steampowered.com/app\") then\
+  停止加载()\
+  进入子页面(\"Universal UI\",{链接=网页链接})\
+end--应用详情\
 \
+if(网页链接:find\"https://store.steampowered.com/search\")then\
+  停止加载()\
+  进入子页面(\"Universal UI\",{链接=网页链接})\
+end--搜索结果\
 \
+if(网页链接:find\"https://store.steampowered.com/account/registerkey\")then\
+  停止加载()\
+  进入子页面(\"Universal UI\",{链接=网页链接})\
+end--产品激活\
 \
+if(网页链接:find\"https://store.steampowered.com/account/wishlist\")then\
+  停止加载()\
+  进入子页面(\"Universal UI\",{链接=网页链接})\
+end--愿望单\
 \
+if(网页链接:find\"https://store.steampowered.com/account/cart\")then\
+  停止加载()\
+  进入子页面(\"Universal UI\",{链接=网页链接})\
+end--购物车\
+\
+if(网页链接:find\"https://steamcommunity.com/profiles/\")then\
+  停止加载()\
+  进入子页面(\"Universal UI\",{链接=网页链接})\
+end--用户资料\
+\
+if(网页链接:find\"https://steamcommunity.com/tradeoffer\")then\
+  停止加载()\
+  进入子页面(\"Universal UI\",{链接=网页链接})\
+end--发送交易" ;
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      } ;
+  ["toolbar"]	= {
+      ["启用搜索功能"]	= false ;
+      ["搜索URL"]	= "" ;
+      ["搜索框提示"]	= "" ;
+      ["输入栏模式"]	= false ;
+      ["menus"]	= {
+          } ;
+      ["icon_btns"]	= {
+          [2]	= {
+              ["icon"]	= "dots_vertical" ;
+              ["onClick"]	= "EMUI5Dialog=require\"EMUI5Dialog\"\
+exitConfirmDialog=EMUI5Dialog()\
+--:setBackgroundColor(\"FFFFFFFF\")\
+:setTitle(\"更多选项\")\
+:setNegativeButton(\"与好友聊天 Beta\",\
+function()\
 EMUI5Dialog=require\"EMUI5Dialog\"\
 exitConfirmDialog=EMUI5Dialog()\
 --:setBackgroundColor(\"FFFFFFFF\")\
-:setTitle(\"Steam Go好友页面 Beta\")\
-:setMessage(\"当前Web页面Steam没有对移动设备进行优化，可能会影响正常使用\\n\\n好友页面目前为Beta测试状态，页面UI可能会因Steam的调整而随之调整\")\
-:setNegativeButton(\"我已了解\",function()\
-进入子页面(\"通用界面\",{链接=\"https://help.steampowered.com/zh-cn\"})\
+:setTitle(\"好友聊天 Beta\")\
+:setMessage(\"当前页面Steam没有针对移动设备进行优化，可能会影响正常使用\\n\\n好友聊天目前为Beta测试状态，页面UI可能会因Steam的调整而随之调整\")\
+:setNegativeButton(\"知道了\",\
+function()\
+加载网页(\"https://steamcommunity.com/chat/\")\
+end)\
+:show()\
+加载网页(\"https://steamcommunity.com/chat/\")\
 end)\
 :show()" ;
+              } ;
+          [1]	= {
+              ["icon"]	= "chevron_left" ;
+              ["onClick"]	= "activity.finish()" ;
+              } ;
+          } ;
       } ;
-  ["colors"]	= {
-      ["悬浮按钮"]	= "#ff434953" ;
-      ["侧滑栏列表图标"]	= "#ff757575" ;
-      ["顶栏部件触摸"]	= "#22ffffff" ;
-      ["顶栏"]	= "#ff000000" ;
-      ["搜索栏背景"]	= "#ff373534" ;
-      ["搜索栏部件触摸"]	= "#44000000" ;
-      ["侧滑栏背景"]	= "#ffffffff" ;
-      ["搜索栏部件"]	= "#ff888888" ;
-      ["导航栏"]	= "#ff171a21" ;
-      ["搜索栏提示文字"]	= "#ffffffff" ;
-      ["顶栏部件"]	= "#ff000000" ;
-      ["侧滑栏列表文字"]	= "#ff333333" ;
-      ["悬浮按钮图标"]	= "#ffffffff" ;
-      ["进度条"]	= "#00000000" ;
+  ["web"]	= {
+      ["浏览器用户标识"]	= "默认" ;
+      ["启用进度条"]	= false ;
+      ["customUa"]	= "Steam" ;
+      ["启用长按菜单"]	= false ;
+      ["启动网页"]	= "https://steamcommunity.com/friends/" ;
+      ["网页沉浸"]	= false ;
+      ["支持打开外部应用"]	= false ;
       } ;
   } ;

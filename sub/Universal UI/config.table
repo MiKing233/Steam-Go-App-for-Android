@@ -1,85 +1,55 @@
 {
+  ["web"]	= {
+      ["启动网页"]	= "" ;
+      ["网页沉浸"]	= false ;
+      ["启用进度条"]	= true ;
+      ["启用长按菜单"]	= false ;
+      ["支持打开外部应用"]	= false ;
+      ["浏览器用户标识"]	= "默认" ;
+      } ;
   ["web_control"]	= {
       [1]	= {
           ["url"]	= "store.steampowered.com" ;
-          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
           ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
+          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
           } ;
       [2]	= {
           ["url"]	= "steamcommunity.com" ;
-          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
           ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
+          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
           } ;
       [3]	= {
           ["url"]	= "help.steampowered.com" ;
-          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
           ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
-          } ;
-      } ;
-  ["web"]	= {
-      ["支持打开外部应用"]	= false ;
-      ["启用长按菜单"]	= false ;
-      ["浏览器用户标识"]	= "默认" ;
-      ["启用进度条"]	= true ;
-      ["网页沉浸"]	= false ;
-      ["启动网页"]	= "" ;
-      } ;
-  ["view_attribute"]	= {
-      ["顶栏阴影强度"]	= "2dp" ;
-      ["搜索栏圆角弧度"]	= "2dp" ;
-      ["搜索栏阴影强度"]	= "2dp" ;
-      ["顶栏标题"]	= "正在加载..." ;
-      ["顶栏高度"]	= "56dp" ;
-      ["侧滑栏宽度"]	= "240dp" ;
-      } ;
-  ["switch"]	= {
-      ["横屏"]	= false ;
-      ["显示状态栏"]	= true ;
-      ["启用启动图"]	= false ;
-      ["支持滑动页面"]	= true ;
-      } ;
-  ["fltBtn"]	= {
-      ["图标"]	= "" ;
-      ["点击事件"]	= "刷新网页()" ;
-      ["显示"]	= true ;
-      } ;
-  ["toolbar"]	= {
-      ["menus"]	= {
-          } ;
-      ["搜索URL"]	= "" ;
-      ["启用搜索功能"]	= false ;
-      ["输入栏模式"]	= false ;
-      ["搜索框提示"]	= "" ;
-      ["icon_btns"]	= {
-          [1]	= {
-              ["onClick"]	= "activity.finish()" ;
-              ["icon"]	= "chevron_left" ;
-              } ;
+          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
           } ;
       } ;
   ["colors"]	= {
-      ["进度条"]	= "#ff1a73e8" ;
-      ["搜索栏提示文字"]	= "#80000000" ;
-      ["顶栏部件"]	= "#ffffffff" ;
-      ["顶栏部件触摸"]	= "#22ffffff" ;
-      ["侧滑栏列表图标"]	= "#ff757575" ;
-      ["导航栏"]	= "#ff171a21" ;
-      ["顶栏"]	= "#ff171a21" ;
-      ["搜索栏背景"]	= "#ffffffff" ;
-      ["悬浮按钮"]	= "#ff171a21" ;
-      ["搜索栏部件"]	= "#ff888888" ;
-      ["侧滑栏背景"]	= "#ffffffff" ;
       ["搜索栏部件触摸"]	= "#44000000" ;
       ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["侧滑栏列表图标"]	= "#ff757575" ;
+      ["导航栏"]	= "#ff171a21" ;
+      ["悬浮按钮"]	= "#ff171a21" ;
       ["侧滑栏列表文字"]	= "#ff333333" ;
+      ["顶栏"]	= "#ff171a21" ;
+      ["侧滑栏背景"]	= "#ffffffff" ;
+      ["顶栏部件触摸"]	= "#22ffffff" ;
+      ["搜索栏提示文字"]	= "#80000000" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["顶栏部件"]	= "#ffffffff" ;
+      ["搜索栏背景"]	= "#ffffffff" ;
+      ["进度条"]	= "#ff1a73e8" ;
       } ;
-  ["sidebar"]	= {
-      ["items"]	= {
-          } ;
-      ["启用顶部图片"]	= false ;
-      ["启用"]	= false ;
+  ["fltBtn"]	= {
+      ["显示"]	= true ;
+      ["图标"]	= "" ;
+      ["点击事件"]	= "刷新网页()" ;
       } ;
   ["events"]	= {
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
       ["程序启动"]	= "--远程安全漏洞补丁 Start\
 import 'android.webkit.WebView'\
 webView.addJavascriptInterface({},'JsInterface')\
@@ -234,10 +204,12 @@ task(200,function(JDPUK)\
 end)\
 if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..\"32\" then error()end\
 --可移动悬浮按钮 End" ;
-      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
 \
 --接收参数\
-浏览器对象,网页链接=..." ;
+浏览器对象，新标题=...\
+\
+设置顶栏标题(webView.title)" ;
       ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
 \
 --接收参数\
@@ -247,11 +219,39 @@ if(网页链接:find\"https://steamcommunity.com/chat\")then\
   停止加载()\
   进入子页面(\"Steam Friends\")\
 end--好友页面" ;
-      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
-\
---接收参数\
-浏览器对象，新标题=...\
-\
-设置顶栏标题(webView.title)" ;
+      } ;
+  ["switch"]	= {
+      ["横屏"]	= false ;
+      ["显示状态栏"]	= true ;
+      ["支持滑动页面"]	= true ;
+      ["启用启动图"]	= false ;
+      } ;
+  ["view_attribute"]	= {
+      ["侧滑栏宽度"]	= "240dp" ;
+      ["搜索栏阴影强度"]	= "2dp" ;
+      ["顶栏标题"]	= "正在加载..." ;
+      ["顶栏高度"]	= "56dp" ;
+      ["顶栏阴影强度"]	= "2dp" ;
+      ["搜索栏圆角弧度"]	= "2dp" ;
+      } ;
+  ["toolbar"]	= {
+      ["icon_btns"]	= {
+          [1]	= {
+              ["icon"]	= "chevron_left" ;
+              ["onClick"]	= "activity.finish()" ;
+              } ;
+          } ;
+      ["搜索URL"]	= "" ;
+      ["搜索框提示"]	= "" ;
+      ["启用搜索功能"]	= false ;
+      ["menus"]	= {
+          } ;
+      ["输入栏模式"]	= false ;
+      } ;
+  ["sidebar"]	= {
+      ["items"]	= {
+          } ;
+      ["启用"]	= false ;
+      ["启用顶部图片"]	= false ;
       } ;
   } ;
