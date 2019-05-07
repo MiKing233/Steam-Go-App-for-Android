@@ -1,12 +1,5 @@
 {
-  ["web"]	= {
-      ["浏览器用户标识"]	= "默认" ;
-      ["启用进度条"]	= true ;
-      ["启用长按菜单"]	= false ;
-      ["惰性加载"]	= true ;
-      ["网页沉浸"]	= false ;
-      ["支持打开外部应用"]	= false ;
-      } ;
+  ["启用"]	= true ;
   ["tab_bar"]	= {
       ["items"]	= {
           [1]	= {
@@ -31,10 +24,29 @@
               } ;
           } ;
       } ;
+  ["switch"]	= {
+      ["启用启动图"]	= false ;
+      ["横屏"]	= false ;
+      ["显示状态栏"]	= true ;
+      ["支持滑动页面"]	= false ;
+      } ;
+  ["view_attribute"]	= {
+      ["标签栏高度"]	= "48dp" ;
+      ["顶栏高度"]	= "56dp" ;
+      ["顶栏阴影强度"]	= "2dp" ;
+      ["搜索栏阴影强度"]	= "10dp" ;
+      ["标签栏滑动条高度"]	= "3dp" ;
+      ["搜索栏圆角弧度"]	= "25dp" ;
+      ["侧滑栏宽度"]	= "250dp" ;
+      ["顶栏标题"]	= "商店" ;
+      } ;
   ["sidebar"]	= {
-      ["启用"]	= true ;
-      ["启用顶部图片"]	= false ;
       ["items"]	= {
+          [32]	= {
+              ["onClick"]	= "进入子页面(\"Universal UI\",{链接=\"https://store.steampowered.com/app/358040/HTC_Vive\"})" ;
+              ["name"]	= "HTC Vive" ;
+              ["icon"]	= "drawable/hololens.png" ;
+              } ;
           [1]	= {
               ["onClick"]	= "加载网页(\"https://store.steampowered.com/genre/Free%20to%20Play/\")" ;
               ["name"]	= "免费游玩" ;
@@ -190,60 +202,11 @@
               ["name"]	= "Steam 流式盒" ;
               ["icon"]	= "drawable/ic_router_black_48dp.png" ;
               } ;
-          [32]	= {
-              ["onClick"]	= "进入子页面(\"Universal UI\",{链接=\"https://store.steampowered.com/app/358040/HTC_Vive\"})" ;
-              ["name"]	= "HTC Vive" ;
-              ["icon"]	= "drawable/hololens.png" ;
-              } ;
           } ;
+      ["启用顶部图片"]	= false ;
+      ["启用"]	= true ;
       } ;
-  ["view_attribute"]	= {
-      ["侧滑栏宽度"]	= "250dp" ;
-      ["顶栏高度"]	= "56dp" ;
-      ["标签栏高度"]	= "48dp" ;
-      ["顶栏阴影强度"]	= "2dp" ;
-      ["标签栏滑动条高度"]	= "3dp" ;
-      ["顶栏标题"]	= "商店" ;
-      ["搜索栏阴影强度"]	= "10dp" ;
-      ["搜索栏圆角弧度"]	= "25dp" ;
-      } ;
-  ["colors"]	= {
-      ["搜索栏提示文字"]	= "#ff171a21" ;
-      ["进度条"]	= "#ff1a73e8" ;
-      ["顶栏部件触摸"]	= "#33ffffff" ;
-      ["导航栏"]	= "#ff171a21" ;
-      ["侧滑栏列表图标"]	= "#ffffffff" ;
-      ["悬浮按钮"]	= "#ff171a21" ;
-      ["标签栏滑动条"]	= "#ffe81500" ;
-      ["搜索栏部件"]	= "#ff171a21" ;
-      ["顶栏"]	= "#ff171a21" ;
-      ["标签栏项目触摸"]	= "#33000000" ;
-      ["搜索栏背景"]	= "#ffeeeeee" ;
-      ["顶栏部件"]	= "#ffffffff" ;
-      ["悬浮按钮图标"]	= "#ffffffff" ;
-      ["侧滑栏列表文字"]	= "#ffffffff" ;
-      ["搜索栏部件触摸"]	= "#44000000" ;
-      ["状态栏"]	= "#ffffffff" ;
-      ["侧滑栏背景"]	= "#ff171a21" ;
-      ["标签栏文本"]	= "#ffffffff" ;
-      } ;
-  ["switch"]	= {
-      ["横屏"]	= false ;
-      ["显示状态栏"]	= true ;
-      ["支持滑动页面"]	= false ;
-      ["启用启动图"]	= false ;
-      } ;
-  ["fltBtn"]	= {
-      ["显示"]	= true ;
-      ["图标"]	= "" ;
-      ["点击事件"]	= "返回网页顶部()--悬浮按钮点击时执行的事件" ;
-      } ;
-  ["启用"]	= true ;
   ["events"]	= {
-      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
-\
---接收参数\
-浏览器对象,网页链接=..." ;
       ["程序启动"]	= "--远程安全漏洞补丁 Start\
 import 'android.webkit.WebView'\
 webView.addJavascriptInterface({},'JsInterface')\
@@ -413,11 +376,6 @@ if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\
 --可移动悬浮按钮 End" ;
       ["网页即将加载"]	= "浏览器对象,网页链接=...\
 \
-if(网页链接:find\"https://store.steampowered.com/app\") then\
-  停止加载()\
-  进入子页面(\"Universal UI\",{链接=网页链接})\
-end--应用详情\
-\
 if(网页链接:find\"https://store.steampowered.com/account/wishlist\")then\
   停止加载()\
   进入子页面(\"Universal UI\",{链接=网页链接})\
@@ -432,37 +390,51 @@ if(网页链接:find\"https://steamcommunity.com/chat\")then\
   停止加载()\
   进入子页面(\"Steam Friends\")\
 end--好友页面" ;
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
       ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
 \
 --接收参数\
 浏览器对象,新标题=..." ;
       } ;
-  ["web_control"]	= {
-      [2]	= {
-          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
-          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
-          ["url"]	= "steamcommunity.com" ;
-          } ;
-      [1]	= {
-          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
-          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
-          ["url"]	= "store.steampowered.com" ;
-          } ;
+  ["colors"]	= {
+      ["状态栏"]	= "#ffffffff" ;
+      ["搜索栏部件"]	= "#ff171a21" ;
+      ["侧滑栏背景"]	= "#ff171a21" ;
+      ["搜索栏背景"]	= "#ffeeeeee" ;
+      ["悬浮按钮"]	= "#ff171a21" ;
+      ["顶栏部件触摸"]	= "#33ffffff" ;
+      ["导航栏"]	= "#ff171a21" ;
+      ["顶栏部件"]	= "#ffffffff" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["顶栏"]	= "#ff171a21" ;
+      ["侧滑栏列表文字"]	= "#ffffffff" ;
+      ["标签栏项目触摸"]	= "#33000000" ;
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["侧滑栏列表图标"]	= "#ffffffff" ;
+      ["标签栏滑动条"]	= "#ffe81500" ;
+      ["标签栏文本"]	= "#ffffffff" ;
+      ["进度条"]	= "#ff1a73e8" ;
+      ["搜索栏提示文字"]	= "#ff171a21" ;
       } ;
   ["toolbar"]	= {
+      ["搜索框提示"]	= "搜索商店" ;
       ["输入栏模式"]	= true ;
       ["menus"]	= {
           } ;
       ["icon_btns"]	= {
           [1]	= {
-              ["onClick"]	= "刷新网页()" ;
               ["icon"]	= "ic_cached_black_48dp" ;
+              ["onClick"]	= "刷新网页()" ;
               } ;
           [2]	= {
-              ["onClick"]	= "activity.finish()" ;
               ["icon"]	= "chevron_left" ;
+              ["onClick"]	= "activity.finish()" ;
               } ;
           [3]	= {
+              ["icon"]	= "dots_vertical" ;
               ["onClick"]	= "EMUI5Dialog=require\"EMUI5Dialog\"    \
 exitConfirmDialog=EMUI5Dialog()\
 --:setBackgroundColor(\"FFFFFFFF\")\
@@ -483,11 +455,34 @@ function()\
 end)\
 \
 :show()" ;
-              ["icon"]	= "dots_vertical" ;
               } ;
           } ;
-      ["搜索URL"]	= "https://store.steampowered.com/search/?term=%s" ;
-      ["搜索框提示"]	= "搜索商店" ;
       ["启用搜索功能"]	= true ;
+      ["搜索URL"]	= "https://store.steampowered.com/search/?term=%s" ;
+      } ;
+  ["web_control"]	= {
+      [2]	= {
+          ["url"]	= "steamcommunity.com" ;
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
+          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
+          } ;
+      [1]	= {
+          ["url"]	= "store.steampowered.com" ;
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
+          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
+          } ;
+      } ;
+  ["web"]	= {
+      ["启用长按菜单"]	= false ;
+      ["支持打开外部应用"]	= false ;
+      ["惰性加载"]	= true ;
+      ["浏览器用户标识"]	= "默认" ;
+      ["启用进度条"]	= true ;
+      ["网页沉浸"]	= false ;
+      } ;
+  ["fltBtn"]	= {
+      ["点击事件"]	= "返回网页顶部()--悬浮按钮点击时执行的事件" ;
+      ["显示"]	= true ;
+      ["图标"]	= "" ;
       } ;
   } ;
