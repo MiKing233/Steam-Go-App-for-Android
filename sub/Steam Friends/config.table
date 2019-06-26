@@ -1,5 +1,114 @@
 {
+  ["web_control"]	= {
+      [2]	= {
+          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
+          ["url"]	= "steamcommunity.com" ;
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
+          } ;
+      [1]	= {
+          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
+          ["url"]	= "store.steampowered.com" ;
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
+          } ;
+      } ;
+  ["toolbar"]	= {
+      ["menus"]	= {
+          } ;
+      ["icon_btns"]	= {
+          [2]	= {
+              ["icon"]	= "dots_vertical" ;
+              ["onClick"]	= "EMUI5Dialog=require\"EMUI5Dialog\"\
+exitConfirmDialog=EMUI5Dialog()\
+--:setBackgroundColor(\"FFFFFFFF\")\
+:setTitle(\"更多选项\")\
+:setNegativeButton(\"与Steam上的好友聊天\",\
+function()\
+EMUI5Dialog=require\"EMUI5Dialog\"\
+exitConfirmDialog=EMUI5Dialog()\
+--:setBackgroundColor(\"FFFFFFFF\")\
+:setTitle(\"与好友聊天\")\
+:setMessage(\"现在你可以透过Steam Chat更加方便的在移动设备上收发消息，当然你也可以继续选择使用Steam Go通过网页与好友聊天\")\
+:setPositiveButton(\"取消\")\
+:setNeutralButton(\"下载Steam Chat 在 Google Play Store\",function()\
+  import \"android.content.Intent\"\
+  import \"android.net.Uri\"\
+  url=\"https://play.google.com/store/apps/details?id=com.valvesoftware.android.steam.friendsui&hl=en_US\"\
+  viewIntent = Intent(\"android.intent.action.VIEW\",Uri.parse(url))\
+  activity.startActivity(viewIntent)\
+end)\
+:setNegativeButton(\"继续使用网页与好友聊天 Beta\",\
+function()\
+加载网页(\"https://steamcommunity.com/chat/\")\
+end)\
+:show()\
+end)\
+:show()" ;
+              } ;
+          [1]	= {
+              ["icon"]	= "chevron_left" ;
+              ["onClick"]	= "activity.finish()" ;
+              } ;
+          } ;
+      ["启用搜索功能"]	= false ;
+      ["搜索框提示"]	= "" ;
+      ["搜索URL"]	= "" ;
+      ["输入栏模式"]	= false ;
+      } ;
+  ["switch"]	= {
+      ["启用启动图"]	= false ;
+      ["横屏"]	= false ;
+      ["显示状态栏"]	= true ;
+      ["支持滑动页面"]	= true ;
+      } ;
+  ["view_attribute"]	= {
+      ["顶栏标题"]	= "Steam 好友" ;
+      ["顶栏阴影强度"]	= "2dp" ;
+      ["侧滑栏宽度"]	= "240dp" ;
+      ["搜索栏阴影强度"]	= "2dp" ;
+      ["搜索栏圆角弧度"]	= "2dp" ;
+      ["顶栏高度"]	= "56dp" ;
+      } ;
+  ["colors"]	= {
+      ["进度条"]	= "#00000000" ;
+      ["侧滑栏背景"]	= "#ffffffff" ;
+      ["顶栏部件"]	= "#ffffffff" ;
+      ["顶栏部件触摸"]	= "#22ffffff" ;
+      ["侧滑栏列表图标"]	= "#ff757575" ;
+      ["顶栏"]	= "#ff171a21" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["侧滑栏列表文字"]	= "#ff333333" ;
+      ["搜索栏提示文字"]	= "#ffffffff" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["搜索栏背景"]	= "#ff373534" ;
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["导航栏"]	= "#ff171a21" ;
+      ["悬浮按钮"]	= "#ff171a21" ;
+      } ;
+  ["fltBtn"]	= {
+      ["点击事件"]	= "刷新网页()--悬浮按钮点击时执行的事件" ;
+      ["显示"]	= true ;
+      ["图标"]	= "" ;
+      } ;
+  ["web"]	= {
+      ["网页沉浸"]	= false ;
+      ["启用长按菜单"]	= false ;
+      ["支持打开外部应用"]	= false ;
+      ["启动网页"]	= "https://steamcommunity.com/friends/" ;
+      ["customUa"]	= "Steam" ;
+      ["浏览器用户标识"]	= "默认" ;
+      ["启用进度条"]	= false ;
+      } ;
+  ["sidebar"]	= {
+      ["启用"]	= false ;
+      ["items"]	= {
+          } ;
+      ["启用顶部图片"]	= false ;
+      } ;
   ["events"]	= {
+      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
+\
+--接收参数\
+浏览器对象，新标题=..." ;
       ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
 \
 --接收参数\
@@ -140,10 +249,6 @@ task(200,function(JDPUK)\
 end)\
 if not tostring(jdpuk)==string.byte(\"\3\")..string.byte(\"\25\")..string.byte(\"4\")..string.char(55)..\"32\" then error()end\
 --可移动悬浮按钮 End" ;
-      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
-\
---接收参数\
-浏览器对象，新标题=..." ;
       ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
 \
 --接收参数\
@@ -183,103 +288,5 @@ if(网页链接:find\"https://steamcommunity.com/tradeoffer\")then\
   停止加载()\
   进入子页面(\"Universal UI\",{链接=网页链接})\
 end--发送交易" ;
-      } ;
-  ["colors"]	= {
-      ["侧滑栏列表图标"]	= "#ff757575" ;
-      ["悬浮按钮图标"]	= "#ffffffff" ;
-      ["搜索栏部件"]	= "#ff888888" ;
-      ["顶栏"]	= "#ff171a21" ;
-      ["侧滑栏列表文字"]	= "#ff333333" ;
-      ["搜索栏背景"]	= "#ff373534" ;
-      ["顶栏部件触摸"]	= "#22ffffff" ;
-      ["进度条"]	= "#00000000" ;
-      ["导航栏"]	= "#ff171a21" ;
-      ["顶栏部件"]	= "#ffffffff" ;
-      ["搜索栏提示文字"]	= "#ffffffff" ;
-      ["侧滑栏背景"]	= "#ffffffff" ;
-      ["悬浮按钮"]	= "#ff171a21" ;
-      ["搜索栏部件触摸"]	= "#44000000" ;
-      } ;
-  ["web_control"]	= {
-      [2]	= {
-          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
-          ["url"]	= "steamcommunity.com" ;
-          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
-          } ;
-      [1]	= {
-          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
-          ["url"]	= "store.steampowered.com" ;
-          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
-          } ;
-      } ;
-  ["switch"]	= {
-      ["显示状态栏"]	= true ;
-      ["启用启动图"]	= false ;
-      ["支持滑动页面"]	= true ;
-      ["横屏"]	= false ;
-      } ;
-  ["web"]	= {
-      ["网页沉浸"]	= false ;
-      ["customUa"]	= "Steam" ;
-      ["启用进度条"]	= false ;
-      ["浏览器用户标识"]	= "默认" ;
-      ["启用长按菜单"]	= false ;
-      ["支持打开外部应用"]	= false ;
-      ["启动网页"]	= "https://steamcommunity.com/friends/" ;
-      } ;
-  ["fltBtn"]	= {
-      ["点击事件"]	= "刷新网页()--悬浮按钮点击时执行的事件" ;
-      ["图标"]	= "" ;
-      ["显示"]	= true ;
-      } ;
-  ["toolbar"]	= {
-      ["输入栏模式"]	= false ;
-      ["搜索框提示"]	= "" ;
-      ["menus"]	= {
-          } ;
-      ["启用搜索功能"]	= false ;
-      ["搜索URL"]	= "" ;
-      ["icon_btns"]	= {
-          [2]	= {
-              ["icon"]	= "dots_vertical" ;
-              ["onClick"]	= "EMUI5Dialog=require\"EMUI5Dialog\"\
-exitConfirmDialog=EMUI5Dialog()\
---:setBackgroundColor(\"FFFFFFFF\")\
-:setTitle(\"更多选项\")\
-:setNegativeButton(\"与好友聊天 Beta\",\
-function()\
-EMUI5Dialog=require\"EMUI5Dialog\"\
-exitConfirmDialog=EMUI5Dialog()\
---:setBackgroundColor(\"FFFFFFFF\")\
-:setTitle(\"与好友聊天 Beta\")\
-:setMessage(\"好友聊天目前为测试版本，页面UI可能会因Steam的调整而随之调整\")\
-:setNegativeButton(\"知道了\",\
-function()\
-加载网页(\"https://steamcommunity.com/chat/\")\
-end)\
-:show()\
-加载网页(\"https://steamcommunity.com/chat/\")\
-end)\
-:show()" ;
-              } ;
-          [1]	= {
-              ["icon"]	= "chevron_left" ;
-              ["onClick"]	= "activity.finish()" ;
-              } ;
-          } ;
-      } ;
-  ["view_attribute"]	= {
-      ["搜索栏圆角弧度"]	= "2dp" ;
-      ["侧滑栏宽度"]	= "240dp" ;
-      ["顶栏高度"]	= "56dp" ;
-      ["顶栏阴影强度"]	= "2dp" ;
-      ["顶栏标题"]	= "Steam 好友" ;
-      ["搜索栏阴影强度"]	= "2dp" ;
-      } ;
-  ["sidebar"]	= {
-      ["启用顶部图片"]	= false ;
-      ["启用"]	= false ;
-      ["items"]	= {
-          } ;
       } ;
   } ;

@@ -1,2 +1,2 @@
-name="Steam Community"
 template="tab"
+name="Steam Community"
