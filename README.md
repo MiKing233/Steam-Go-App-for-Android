@@ -3,6 +3,8 @@
 
 [Download 下载](https://github.com/MiKing233/Steam-Go-App-for-Android/releases)  
 
+[Download from Coolapk 从酷安下载](https://www.coolapk.com/apk/com.miking.steam)  
+
 ![Default Configuration](https://i.imgur.com/QPI43VU.png)
 
 
