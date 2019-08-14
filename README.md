@@ -1,6 +1,11 @@
 # Steam Go App for Android (Lua Edition)
 氢量级第三方Steam App
 
+[Download 下载](https://github.com/MiKing233/Steam-Go-App-for-Android/releases)  
+
+![Default Configuration](https://127.0.0.1/)
+
+
 >友好交互.方便快捷
 
 Steam Go拥有完善的侧滑栏分类，简单快捷找到需要的内容，浏览商店，购买产品一气呵成，联系好友，每日特惠，个人资料，游戏分类，激活产品，即点即用，一步直达.
