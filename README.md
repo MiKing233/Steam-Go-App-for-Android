@@ -1,4 +1,4 @@
-# Steam Go Lua Edition
+# Steam Go App for Android (Lua Edition)
 氢量级第三方Steam App
 
 >友好交互.方便快捷
