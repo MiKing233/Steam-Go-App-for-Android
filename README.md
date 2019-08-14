@@ -3,7 +3,7 @@
 
 [Download 下载](https://github.com/MiKing233/Steam-Go-App-for-Android/releases)  
 
-![Default Configuration](https://127.0.0.1/)
+![Default Configuration](https://i.imgur.com/QPI43VU.png)
 
 
 >友好交互.方便快捷
