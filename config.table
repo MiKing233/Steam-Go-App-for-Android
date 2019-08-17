@@ -1,64 +1,4 @@
 {
-  ["web_control"]	= {
-      [1]	= {
-          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
-          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
-          ["url"]	= "store.steampowered.com" ;
-          } ;
-      [2]	= {
-          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
-          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
-          ["url"]	= "steamcommunity.com" ;
-          } ;
-      [3]	= {
-          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
-          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
-          ["url"]	= "help.steampowered.com" ;
-          } ;
-      } ;
-  ["switch"]	= {
-      ["显示状态栏"]	= true ;
-      ["支持滑动页面"]	= true ;
-      ["启用启动图"]	= false ;
-      ["横屏"]	= false ;
-      } ;
-  ["view_attribute"]	= {
-      ["搜索栏阴影强度"]	= "2dp" ;
-      ["顶栏高度"]	= "56dp" ;
-      ["侧滑栏宽度"]	= "200dp" ;
-      ["顶栏阴影强度"]	= "2dp" ;
-      ["搜索栏圆角弧度"]	= "2dp" ;
-      ["顶栏标题"]	= "Steam Go" ;
-      } ;
-  ["fltBtn"]	= {
-      ["图标"]	= "" ;
-      ["显示"]	= true ;
-      ["点击事件"]	= "进入子页面(\"Universal UI\",{链接=\"https://help.steampowered.com/zh-cn/accountdata\"})" ;
-      } ;
-  ["colors"]	= {
-      ["侧滑栏列表文字"]	= "#ffffffff" ;
-      ["顶栏部件触摸"]	= "#22ffffff" ;
-      ["悬浮按钮图标"]	= "#ffffffff" ;
-      ["搜索栏背景"]	= "#ff171a21" ;
-      ["顶栏部件"]	= "#ffffffff" ;
-      ["顶栏"]	= "#ff171a21" ;
-      ["侧滑栏背景"]	= "#00000000" ;
-      ["进度条"]	= "#00000000" ;
-      ["侧滑栏列表图标"]	= "#ffffffff" ;
-      ["搜索栏部件"]	= "#ff888888" ;
-      ["导航栏"]	= "#ff171a21" ;
-      ["悬浮按钮"]	= "#ff171a21" ;
-      ["搜索栏提示文字"]	= "#ffffffff" ;
-      ["搜索栏部件触摸"]	= "#44000000" ;
-      } ;
-  ["web"]	= {
-      ["网页沉浸"]	= false ;
-      ["启用长按菜单"]	= false ;
-      ["支持打开外部应用"]	= false ;
-      ["浏览器用户标识"]	= "默认" ;
-      ["启用进度条"]	= false ;
-      ["启动网页"]	= "https://store.steampowered.com/account" ;
-      } ;
   ["toolbar"]	= {
       ["icon_btns"]	= {
           [2]	= {
@@ -83,136 +23,118 @@ end)\
               ["onClick"]	= "进入子页面(\"Universal UI\",{链接=\"https://steamcommunity.com/profiles/76561198408205511/home/invites\"})" ;
               } ;
           } ;
-      ["启用搜索功能"]	= false ;
-      ["搜索URL"]	= "" ;
       ["输入栏模式"]	= false ;
-      ["搜索框提示"]	= "" ;
+      ["启用搜索功能"]	= false ;
       ["menus"]	= {
           } ;
+      ["搜索URL"]	= "" ;
+      ["搜索框提示"]	= "" ;
+      } ;
+  ["view_attribute"]	= {
+      ["顶栏标题"]	= "Steam Go" ;
+      ["顶栏阴影强度"]	= "2dp" ;
+      ["顶栏高度"]	= "56dp" ;
+      ["搜索栏阴影强度"]	= "2dp" ;
+      ["侧滑栏宽度"]	= "200dp" ;
+      ["搜索栏圆角弧度"]	= "2dp" ;
+      } ;
+  ["global_js"]	= "" ;
+  ["switch"]	= {
+      ["显示状态栏"]	= true ;
+      ["支持滑动页面"]	= true ;
+      ["横屏"]	= false ;
+      ["启用启动图"]	= false ;
+      } ;
+  ["colors"]	= {
+      ["侧滑栏列表文字"]	= "#ffffffff" ;
+      ["顶栏部件"]	= "#ffffffff" ;
+      ["顶栏部件触摸"]	= "#22ffffff" ;
+      ["搜索栏提示文字"]	= "#ffffffff" ;
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["搜索栏背景"]	= "#ff171a21" ;
+      ["顶栏"]	= "#ff171a21" ;
+      ["悬浮按钮"]	= "#ff171a21" ;
+      ["侧滑栏列表图标"]	= "#ffffffff" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["进度条"]	= "#00000000" ;
+      ["导航栏"]	= "#ff171a21" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["侧滑栏背景"]	= "#00000000" ;
+      } ;
+  ["fltBtn"]	= {
+      ["显示"]	= true ;
+      ["图标"]	= "" ;
+      ["点击事件"]	= "进入子页面(\"Universal UI\",{链接=\"https://help.steampowered.com/zh-cn/accountdata\"})" ;
       } ;
   ["sidebar"]	= {
-      ["启用"]	= true ;
       ["items"]	= {
           [1]	= {
               ["name"]	= "特别优惠" ;
-              ["icon"]	= "drawable/ic_style_black_48dp.png" ;
               ["onClick"]	= "进入子页面(\"Discounted\")" ;
+              ["icon"]	= "drawable/ic_style_black_48dp.png" ;
               } ;
           [2]	= {
               ["name"]	= "浏览商店" ;
-              ["icon"]	= "drawable/ic_store_black_48dp.png" ;
               ["onClick"]	= "进入子页面(\"Steam Store\")" ;
+              ["icon"]	= "drawable/ic_store_black_48dp.png" ;
               } ;
           [3]	= {
               ["name"]	= "浏览社区" ;
-              ["icon"]	= "drawable/ic_group_work_black_48dp.png" ;
               ["onClick"]	= "进入子页面(\"Steam Community\")\
 \
 Toast.makeText(activity,\"该页面访问的域名位于Steam社区\\n(steamcommunity.com)下\\n中国大陆地区可能需要科学上网才能访问\" , Toast.LENGTH_LONG )\
 .show()" ;
+              ["icon"]	= "drawable/ic_group_work_black_48dp.png" ;
               } ;
           [4]	= {
               ["name"]	= "我的资料" ;
-              ["icon"]	= "drawable/ic_face_black_48dp.png" ;
               ["onClick"]	= "进入子页面(\"Universal UI\",{链接=\"https://steamcommunity.com/login\"})\
 \
 Toast.makeText(activity,\"该页面访问的域名位于Steam社区\\n(steamcommunity.com)下\\n中国大陆地区可能需要科学上网才能访问\" , Toast.LENGTH_LONG )\
 .show()" ;
+              ["icon"]	= "drawable/ic_face_black_48dp.png" ;
               } ;
           [5]	= {
               ["name"]	= "我的好友" ;
-              ["icon"]	= "drawable/ic_supervisor_account_black_48dp.png" ;
               ["onClick"]	= "进入子页面(\"Steam Friends\")\
 \
 Toast.makeText(activity,\"该页面访问的域名位于Steam社区\\n(steamcommunity.com)下\\n中国大陆地区可能需要科学上网才能访问\" , Toast.LENGTH_LONG )\
 .show()" ;
+              ["icon"]	= "drawable/ic_supervisor_account_black_48dp.png" ;
               } ;
           [6]	= {
               ["name"]	= "好友动态" ;
-              ["icon"]	= "drawable/comment_text.png" ;
               ["onClick"]	= "进入子页面(\"Universal UI\",{链接=\"https://steamcommunity.com/id/username/home/\"})\
 \
 \
 Toast.makeText(activity,\"该页面访问的域名位于Steam社区\\n(steamcommunity.com)下\\n中国大陆地区可能需要科学上网才能访问\" , Toast.LENGTH_LONG )\
 .show()" ;
+              ["icon"]	= "drawable/comment_text.png" ;
               } ;
           [7]	= {
               ["name"]	= "愿望单" ;
-              ["icon"]	= "drawable/ic_loyalty_black_48dp.png" ;
               ["onClick"]	= "进入子页面(\"Universal UI\",{链接=\"https://store.steampowered.com/wishlist\"})" ;
+              ["icon"]	= "drawable/ic_loyalty_black_48dp.png" ;
               } ;
           [8]	= {
               ["name"]	= "购物车" ;
-              ["icon"]	= "drawable/ic_shopping_cart_black_48dp.png" ;
               ["onClick"]	= "进入子页面(\"Universal UI\",{链接=\"https://store.steampowered.com/cart\"})" ;
+              ["icon"]	= "drawable/ic_shopping_cart_black_48dp.png" ;
               } ;
           [9]	= {
               ["name"]	= "关于" ;
-              ["icon"]	= "drawable/ic_info_black_48dp.png" ;
               ["onClick"]	= "进入子页面(\"About Steam Go\")" ;
+              ["icon"]	= "drawable/ic_info_black_48dp.png" ;
               } ;
           } ;
       ["启用顶部图片"]	= false ;
+      ["启用"]	= true ;
       } ;
   ["events"]	= {
-      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
-\
---接收参数\
-浏览器对象,网页链接=..." ;
       ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
 \
 --接收参数\
 浏览器对象，新标题=..." ;
-      ["网页即将加载"]	= "浏览器对象,网页链接=...\
-\
-if(网页链接:find\"https://store.steampowered.com/app\") then\
-  停止加载()\
-  进入子页面(\"Universal UI\",{链接=网页链接})\
-end--应用详情\
-\
-if(网页链接:find\"https://store.steampowered.com/search\")then\
-  停止加载()\
-  进入子页面(\"Universal UI\",{链接=网页链接})\
-end--搜索结果\
-\
-if(网页链接:find\"https://store.steampowered.com/account/registerkey\")then\
-  停止加载()\
-  进入子页面(\"Universal UI\",{链接=网页链接})\
-end--产品激活\
-\
-if(网页链接:find\"https://store.steampowered.com/account/wishlist\")then\
-  停止加载()\
-  进入子页面(\"Universal UI\",{链接=网页链接})\
-end--愿望单\
-\
-if(网页链接:find\"https://store.steampowered.com/account/cart\")then\
-  停止加载()\
-  进入子页面(\"Universal UI\",{链接=网页链接})\
-end--购物车\
-\
-if(网页链接:find\"https://steamcommunity.com/chat\")then\
-  停止加载()\
-  进入子页面(\"Steam Friends\")\
-end--好友页面\
-\
-if(网页链接:find\"https://store.steampowered.com/login\")then--登录判定\
-exitConfirmDialog=EMUI5Dialog()\
-:setBlurBackgroundEnable(false)--开启模糊背景\
---:setBackgroundColor(\"FFFFFFFF\")\
-:setTitle(\"Steam账户未登录\")\
-:setMessage(\"Steam Go相关服务依赖Steam账户，登录以获得最佳体验\",\"#FF212121\")\
---:setView(loadlayout{Button,text=\"自定义布局\",onClick=function()exitConfirmDialog:dismiss()end})\
-:setPositiveButton(\"知道了\",\
-function()\
-end,0xFF1A73E8)\
---:setCancelable(false)--设置禁止取消对话框\
-:setBlurBackgroundCacheEnable(false)--开启缓存，稍后修改时无需再次截图，注意如果不再用到，记得关闭模糊背景缓存以删除缓存的模糊背景图片\
-:setOnDismissEvent(\
-function()--设置对话框关闭事件\
-  exitConfirmDialog:setBlurBackgroundCacheEnable(false)--关闭模糊背景缓存，同时会清除已经缓存的模糊背景图片\
-end)\
-:show()\
-end--登录账户提示" ;
       ["程序启动"]	= "import \"android.app.*\"\
 import \"android.os.*\"\
 import \"android.widget.*\"\
@@ -569,6 +491,84 @@ return true\
 end\
 end\
 --退出确认 End" ;
+      ["网页即将加载"]	= "浏览器对象,网页链接=...\
+\
+if(网页链接:find\"https://store.steampowered.com/app\") then\
+  停止加载()\
+  进入子页面(\"Universal UI\",{链接=网页链接})\
+end--应用详情\
+\
+if(网页链接:find\"https://store.steampowered.com/search\")then\
+  停止加载()\
+  进入子页面(\"Universal UI\",{链接=网页链接})\
+end--搜索结果\
+\
+if(网页链接:find\"https://store.steampowered.com/account/registerkey\")then\
+  停止加载()\
+  进入子页面(\"Universal UI\",{链接=网页链接})\
+end--产品激活\
+\
+if(网页链接:find\"https://store.steampowered.com/account/wishlist\")then\
+  停止加载()\
+  进入子页面(\"Universal UI\",{链接=网页链接})\
+end--愿望单\
+\
+if(网页链接:find\"https://store.steampowered.com/account/cart\")then\
+  停止加载()\
+  进入子页面(\"Universal UI\",{链接=网页链接})\
+end--购物车\
+\
+if(网页链接:find\"https://steamcommunity.com/chat\")then\
+  停止加载()\
+  进入子页面(\"Steam Friends\")\
+end--好友页面\
+\
+if(网页链接:find\"https://store.steampowered.com/login\")then--登录判定\
+exitConfirmDialog=EMUI5Dialog()\
+:setBlurBackgroundEnable(false)--开启模糊背景\
+--:setBackgroundColor(\"FFFFFFFF\")\
+:setTitle(\"Steam账户未登录\")\
+:setMessage(\"Steam Go相关服务依赖Steam账户，登录以获得最佳体验\",\"#FF212121\")\
+--:setView(loadlayout{Button,text=\"自定义布局\",onClick=function()exitConfirmDialog:dismiss()end})\
+:setPositiveButton(\"知道了\",\
+function()\
+end,0xFF1A73E8)\
+--:setCancelable(false)--设置禁止取消对话框\
+:setBlurBackgroundCacheEnable(false)--开启缓存，稍后修改时无需再次截图，注意如果不再用到，记得关闭模糊背景缓存以删除缓存的模糊背景图片\
+:setOnDismissEvent(\
+function()--设置对话框关闭事件\
+  exitConfirmDialog:setBlurBackgroundCacheEnable(false)--关闭模糊背景缓存，同时会清除已经缓存的模糊背景图片\
+end)\
+:show()\
+end--登录账户提示" ;
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
       } ;
-  ["global_js"]	= "" ;
+  ["web_control"]	= {
+      [1]	= {
+          ["url"]	= "store.steampowered.com" ;
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
+          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
+          } ;
+      [2]	= {
+          ["url"]	= "steamcommunity.com" ;
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
+          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
+          } ;
+      [3]	= {
+          ["url"]	= "help.steampowered.com" ;
+          ["remove_element"]	= "responsive_header,responsive_page_menu_ctn mainmenu,@ID(store_nav_area),continue_shopping_ctn" ;
+          ["js"]	= "document.getElementsByClassName(\"responsive_page_content\")[0].style.paddingTop=0;" ;
+          } ;
+      } ;
+  ["web"]	= {
+      ["支持打开外部应用"]	= false ;
+      ["网页沉浸"]	= false ;
+      ["浏览器用户标识"]	= "默认" ;
+      ["启动网页"]	= "https://store.steampowered.com/account" ;
+      ["启用长按菜单"]	= false ;
+      ["启用进度条"]	= false ;
+      } ;
   } ;

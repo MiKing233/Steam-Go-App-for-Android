@@ -1,2 +1,2 @@
-name="Steam Friends"
 template="tool"
+name="Steam Friends"

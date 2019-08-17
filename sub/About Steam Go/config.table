@@ -1,4 +1,16 @@
 {
+  ["sidebar"]	= {
+      ["items"]	= {
+          } ;
+      ["启用顶部图片"]	= false ;
+      ["启用"]	= false ;
+      } ;
+  ["switch"]	= {
+      ["横屏"]	= false ;
+      ["启用启动图"]	= false ;
+      ["支持滑动页面"]	= false ;
+      ["显示状态栏"]	= true ;
+      } ;
   ["events"]	= {
       ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
 \
@@ -389,13 +401,12 @@ function()--版本点击事件 Start\
 \
   :setNeutralButton(\"在GitHub查看\",\
   function()\
-    url=\"https://github.com/MiKing233/Steam-Go/releases\"\
+    url=\"https://github.com/MiKing233/Steam-Go-App-for-Android/releases\"\
     viewIntent = Intent(\"android.intent.action.VIEW\",Uri.parse(url))\
     activity.startActivity(viewIntent)--转到GitHub工程页面\
     Toast.makeText(activity,\"别忘了点个Star！\" , Toast.LENGTH_SHORT )\
     .show()--点击弹出消息\
   end,0xff1a73e8)\
-\
   :setPositiveButton(\"取消\")\
   :show()\
 end,--版本点击事件 End\
@@ -587,7 +598,7 @@ function()--捐赠点击事件 Start\
 \
   :setPositiveButton(\"捐赠名单\",--捐赠名单 点击事件\
   function()\
-    进入子页面(\"Universal UI\",{链接=\"https://github.com/MiKing233/Steam-Go/blob/master/Steam%20Go%20Donation%20list\"})\
+    进入子页面(\"Universal UI\",{链接=\"https://github.com/MiKing233/Steam-Go-App-for-Android/blob/master/Steam%20Go%20Donation%20list\"})\
   end,0xFF171A21)\
 \
 :show()  \
@@ -607,19 +618,19 @@ function()--关于更多 Start\
   :setMessage(\"更多有关Steam Go的信息\")\
   :setPositiveButton(\"用户协议\",\
   function()\
-    进入子页面(\"Universal UI\",{链接=\"https://github.com/MiKing233/Steam-Go/blob/master/Steam%20Go%20User%20Agreement\"})\
+    进入子页面(\"Universal UI\",{链接=\"https://github.com/MiKing233/Steam-Go-App-for-Android/blob/master/Steam%20Go%20User%20Agreement\"})\
   end,0xFF1A73E8)\
 \
 \
   :setNegativeButton(\"在GitHub上查看我们的开源代码\",\
   function()\
-    进入子页面(\"Universal UI\",{链接=\"https://github.com/MiKing233/Steam-Go\"})\
+    进入子页面(\"Universal UI\",{链接=\"https://github.com/MiKing233/Steam-Go-App-for-Android\"})\
   end,0xFF1A73E8)\
 \
 \
   :setNeutralButton(\"开放源代码许可\",\
   function()\
-    进入子页面(\"Universal UI\",{链接=\"https://github.com/MiKing233/Steam-Go/blob/master/Steam%20Go%20Open%20source%20license\"})\
+    进入子页面(\"Universal UI\",{链接=\"https://github.com/MiKing233/Steam-Go-App-for-Android/blob/master/Steam%20Go%20Open%20source%20license\"})\
   end,0xFF1A73E8)\
   :show()\
 \
@@ -648,65 +659,53 @@ end" ;
 --接收参数\
 浏览器对象，新标题=..." ;
       } ;
+  ["web_control"]	= {
+      } ;
+  ["colors"]	= {
+      ["搜索栏提示文字"]	= "#80000000" ;
+      ["顶栏部件"]	= "#ffffffff" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["顶栏"]	= "#ff171a21" ;
+      ["顶栏部件触摸"]	= "#22ffffff" ;
+      ["侧滑栏列表图标"]	= "#ff757575" ;
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["侧滑栏背景"]	= "#ffffffff" ;
+      ["进度条"]	= "#00000000" ;
+      ["导航栏"]	= "#00000000" ;
+      ["悬浮按钮"]	= "#ff171a21" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["搜索栏背景"]	= "#ffffffff" ;
+      ["侧滑栏列表文字"]	= "#ff333333" ;
+      } ;
   ["view_attribute"]	= {
-      ["顶栏高度"]	= "0dp" ;
-      ["搜索栏阴影强度"]	= "2dp" ;
-      ["顶栏标题"]	= "Title" ;
-      ["顶栏阴影强度"]	= "2dp" ;
       ["侧滑栏宽度"]	= "240dp" ;
+      ["顶栏阴影强度"]	= "2dp" ;
+      ["搜索栏阴影强度"]	= "2dp" ;
+      ["顶栏高度"]	= "0dp" ;
       ["搜索栏圆角弧度"]	= "2dp" ;
-      } ;
-  ["toolbar"]	= {
-      ["icon_btns"]	= {
-          } ;
-      ["输入栏模式"]	= false ;
-      ["搜索URL"]	= "" ;
-      ["启用搜索功能"]	= false ;
-      ["搜索框提示"]	= "" ;
-      ["menus"]	= {
-          } ;
-      } ;
-  ["sidebar"]	= {
-      ["启用顶部图片"]	= false ;
-      ["启用"]	= false ;
-      ["items"]	= {
-          } ;
-      } ;
-  ["switch"]	= {
-      ["横屏"]	= false ;
-      ["支持滑动页面"]	= false ;
-      ["显示状态栏"]	= true ;
-      ["启用启动图"]	= false ;
+      ["顶栏标题"]	= "Title" ;
       } ;
   ["web"]	= {
+      ["启用进度条"]	= false ;
+      ["启用长按菜单"]	= false ;
+      ["启动网页"]	= "" ;
       ["网页沉浸"]	= false ;
       ["支持打开外部应用"]	= false ;
-      ["启用长按菜单"]	= false ;
       ["浏览器用户标识"]	= "默认" ;
-      ["启动网页"]	= "" ;
-      ["启用进度条"]	= false ;
+      } ;
+  ["toolbar"]	= {
+      ["menus"]	= {
+          } ;
+      ["icon_btns"]	= {
+          } ;
+      ["搜索框提示"]	= "" ;
+      ["搜索URL"]	= "" ;
+      ["启用搜索功能"]	= false ;
+      ["输入栏模式"]	= false ;
       } ;
   ["fltBtn"]	= {
       ["图标"]	= "" ;
       ["点击事件"]	= "--悬浮按钮点击时执行的事件" ;
       ["显示"]	= false ;
-      } ;
-  ["colors"]	= {
-      ["搜索栏背景"]	= "#ffffffff" ;
-      ["搜索栏部件"]	= "#ff888888" ;
-      ["搜索栏部件触摸"]	= "#44000000" ;
-      ["悬浮按钮"]	= "#ff171a21" ;
-      ["顶栏部件"]	= "#ffffffff" ;
-      ["导航栏"]	= "#00000000" ;
-      ["进度条"]	= "#00000000" ;
-      ["顶栏部件触摸"]	= "#22ffffff" ;
-      ["顶栏"]	= "#ff171a21" ;
-      ["侧滑栏背景"]	= "#ffffffff" ;
-      ["侧滑栏列表文字"]	= "#ff333333" ;
-      ["侧滑栏列表图标"]	= "#ff757575" ;
-      ["悬浮按钮图标"]	= "#ffffffff" ;
-      ["搜索栏提示文字"]	= "#80000000" ;
-      } ;
-  ["web_control"]	= {
       } ;
   } ;

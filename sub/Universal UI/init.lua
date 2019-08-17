@@ -1,2 +1,2 @@
-template="tool"
 name="Universal UI"
+template="tool"

@@ -1,2 +1,2 @@
-name="Steam Store"
 template="tab"
+name="Steam Store"
