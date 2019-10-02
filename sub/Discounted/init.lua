@@ -1,2 +1,2 @@
-template="tab"
 name="Discounted"
+template="tab"

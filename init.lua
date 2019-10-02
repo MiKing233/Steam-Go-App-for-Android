@@ -1,10 +1,10 @@
-packagename="com.miking.steam"
-template="tool"
+appname="Steam Go"
+appcode="240"
 user_permission={
   [1]	= "ACCESS_NETWORK_STATE" ;
   [2]	= "ACCESS_WIFI_STATE" ;
   [3]	= "INTERNET" ;
   } ;
-appcode="238"
-appname="Steam Go"
-appver="2.3.8"
+template="tool"
+appver="2.4.0"
+packagename="com.miking.steam"
