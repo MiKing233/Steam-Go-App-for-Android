@@ -1,7 +1,7 @@
 # Steam Go App for Android (Lua Edition)
 氢量级第三方Steam App
 
-[Download 下载](https://github.com/MiKing233/Steam-Go-App-for-Android/releases)  
+[Download from Github 从Github下载](https://github.com/MiKing233/Steam-Go-App-for-Android/releases)  
 
 [Download from Coolapk 从酷安下载](https://www.coolapk.com/apk/com.miking.steam)  
 
